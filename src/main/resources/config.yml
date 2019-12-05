@@ -666,6 +666,12 @@ chunk:
         spawn_teleport:
           default_62: false
           display_15: true
+        #
+        # LAND_ENTER
+        # Should this role be able to enter the land?
+        land_enter:
+          default_92: true
+          display_71: true
 
     # Members are all players, wich are trusted in the chunk and have no admin role.
     member:
@@ -747,6 +753,12 @@ chunk:
         spawn_teleport:
           default_63: true
           display_54: false
+        #
+        # LAND_ENTER
+        # Should this role be able to enter the land?
+        land_enter:
+          default_93: true
+          display_72: true
 
       management:
         #
@@ -891,6 +903,12 @@ chunk:
         spawn_teleport:
           default_64: true
           display_59: false
+        #
+        # LAND_ENTER
+        # Should this role be able to enter the land?
+        land_enter:
+          default_94: true
+          display_73: true
 
       management:
         #
@@ -1334,11 +1352,12 @@ wars:
   # Default: 2,5 days
   duration_2: 36h
 
-  # Allow players doing the following things in the enemy land.
+  # Allow players doing the following things in the enemy land (only during war).
   # Avialible actions: https://github.com/Angeschossen/Lands/blob/master/LandsAPI/src/me/angeschossen/lands/api/enums/LandsAction.java
   # NOTE: PLACE_SCAFFOLDING is only available in spigot 1.14.x or higher.
   role-settings_list:
     - ATTACK_PLAYER
+    - LAND_ENTER
     - PLACE_LADDER
     - PLACE_VINE
     - PLACE_SCAFFOLDING

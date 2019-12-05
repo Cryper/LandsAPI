@@ -499,7 +499,7 @@ gui:
           - ' '
           - '&8- &7To assign chunks to this'
           - '  &7area, use the selection tool'
-          - '  &8(/&aLands selection&8) and'
+          - '  &8(/&3Lands selection&8) and'
           - '  &7then execute'
           - '  &8/&3Lands selection assign {area}'
         material: OAK_SIGN
@@ -1234,6 +1234,17 @@ gui:
           - '&7Allow this role to'
           - '&7teleport to the spawn?'
         material: ENDER_PEARL
+        from: 10
+        to: 27
+      land_enter:
+        name: '&6Enter this Area'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to'
+          - '&7enter this area?'
+        material: OAK_FENCE_GATE
         from: 10
         to: 27
       chunk_assign:
