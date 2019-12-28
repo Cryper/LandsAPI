@@ -1,2 +1,8 @@
 + ADDED disallow-new-chunks option for /Lands wild
     Enabled by default.
+
++ ADDED German GUI translation by @Cryper
+
+
+# FIXED Removed uneccesary data save
+# FIXED Block dispense issue
