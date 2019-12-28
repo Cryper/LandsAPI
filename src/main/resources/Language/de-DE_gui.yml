@@ -2580,7 +2580,7 @@ gui:
         from: 1
         to: 9
   admin_wilderness_player-settings:
-    title: '&8Spieler Einstellung'
+    title: '&8Spieler Einstellungx'
     size: 36
     l:
       object:
