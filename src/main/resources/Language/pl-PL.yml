@@ -190,7 +190,7 @@ message:
       cancelled: '&cTeleportacja anulowana. &7Proszę sie nie ruszać
       w trakcie oczekiwania.&b {sec} &7sekund do teleportacji.'
       chunk: '#t#&9&lPrzeteleportowano{newline}&7X: {x} Z: {z} Za:&a ${cost}'
-      cancelled-lands: '&cTeleportacja została anuloana przez inny lands. &7Proszę
+      cancelled-plugins: '&cTeleportacja została anuloana przez inny lands. &7Proszę
         sprawdzić pluginy. &7To nie jest ingerencja pluginu Lands'
   claimblock:
     dropped: '&cclaimbloki leżą na ziemi. &7nie masz miejsca w ekwipunku.'

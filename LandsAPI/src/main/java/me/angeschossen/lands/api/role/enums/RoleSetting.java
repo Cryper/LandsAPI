@@ -3,7 +3,7 @@ package me.angeschossen.lands.api.role.enums;
 public enum RoleSetting implements SettingRole {
     BLOCK_BREAK(0, "noaccess.break", false, ActionType.BLOCK),
     BLOCK_PLACE(1, "noaccess.place", false, ActionType.BLOCK),
-    ATTACK_PLAYER(2, "noaccess.combat.pvp", false, ActionType.ENTITY),
+    ATTACK_PLAYER(2, "noaccess.combat.pvp.attacker", false, ActionType.ENTITY),
     ATTACK_ANIMAL(3, "noaccess.combat.animal", false, ActionType.ENTITY),
     BLOCK_IGNITE(4, "noaccess.ignite", false, ActionType.BLOCK),
     INTERACT_GENERAL(5, "noaccess.interact.general", false, ActionType.BLOCK),

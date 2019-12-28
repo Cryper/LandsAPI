@@ -9,7 +9,7 @@ public enum ManagementSetting implements SettingRole {
     PLAYER_SETROLE(3, "", true, SettingType.MIXED),
     LAND_CLAIM(4, "", true, SettingType.GLOBAL),
     LAND_CLAIM_BORDER(5, "", true, SettingType.GLOBAL),
-    LAND_SPAWN_SET(6, "", true, SettingType.GLOBAL),
+    SPAWN_SET(6, "", true, SettingType.GLOBAL),
     SPAWN_TELEPORT(7, "", false, SettingType.GLOBAL),
     LAND_RENAME(8, "", true, SettingType.GLOBAL),
     SETTING_EDIT_LAND(9, "", true, SettingType.MIXED),

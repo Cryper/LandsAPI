@@ -1,9 +1,2 @@
-+ ADDED LAND_ENTER setting to visitor role
-    With this setting you can disallow visitors to enter a area / land
-
-    To allow players entering the enemy land DURING WAR, add this to the role settings list in the wars section in config:
-    - LAND_ENTER
-
-
-# IMPROVED Config invalid values checker
-# FIXED Player demote - no response
++ ADDED disallow-new-chunks option for /Lands wild
+    Enabled by default.

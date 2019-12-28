@@ -171,9 +171,11 @@ message:
       container: '&cYou''re not allowed to open containers here. &7This chunk belongs to land&2 {land}&7.'
       villager: '&cYou''re not allowed to trade with villagers here. &7This chunk belongs to land&2 {land}&7.'
     combat:
-      animal: '&cYou''re not allowed to attack animals here. &7This chunk belongs to land&§ {land}&7.'
-      pvp: '&cYou''re not allowed to attack players here. &7This chunk belongs to land&§ {land}&7.'
-      pvp-target: '&cYour target isn''t allowed to attack players here. &7You can''t fight with them here. &7This chunk belongs to land&3 {land}&7.'
+      animal: '&cYou''re not allowed to attack animals here. &7This chunk belongs to land&2 {land}&7.'
+      pvp:
+        attacker: '&cYou''re not allowed to attack players here. &7This chunk belongs to land&2 {land}&7.'
+        target: '&cYour target isn''t allowed to attack players here. &7You can''t fight with them here. &7This chunk belongs to land&2 {land}&7.'
+        ally: '&cYou can''t attack this player in wilderness, because he is a member in one of your lands. &7Arena fights can be done in your land by allowing pvp in the role settings.'
 
   event:
     fly:
@@ -193,7 +195,7 @@ message:
       started: '&7Teleportation process started. Teleporting in&5 {sec} &7seconds. Please don''t move.'
       cancelled: '&cYour teleportation has been cancelled. &7Please don''t move while you''re waiting&5 {sec} &7seconds for teleportation.'
       chunk: '#t#&9&lTeleported{newline}&7X: {x} Z: {z} Cost:&c ${cost}'
-      cancelled-lands: '&cTeleportation was cancelled by a other plugin. &7Please check your other plugins. &7This is not a Lands issue.'
+      cancelled-plugins: '&cTeleportation was cancelled by a other plugin. &7Please check your other plugins. &7This is not a Lands issue.'
   claimblock:
     dropped: '&cSome claimblocks lie on the ground. &7There was no space left in your inventory.'
     success: '&7You got&3 {blocks} &7claimblock(s). &7Place them in a chunk to claim it.'
@@ -217,11 +219,13 @@ message:
     cancelled: '#t#&c&lCancelled{newline}&c&lChat Action'
     player: '&7Please enter the name of the target player.'
     role:
-      name: '&7Please enter a name for the new role.'
+      create: '&7Please enter a name for the new role. You can include colorcodes.'
+      delete: '&7Please enter the name of the role, which you want to delete.'
       exists: '&cA role with the name&4 {role} &calready exists. &7Please choose a different name.'
       max: '&cYou can''t create more roles for this land. &7You reached your limit of&3 {max} &7roles. Permisssion: lands.roles.NUMBER'
     area:
-      name: '&7Please enter a name for the new area.'
+      create: '&7Please enter a name for the new area. You can include colorcodes.'
+      delete: '&7Please enter the name of the area, which you want to delete.'
       exists: '&cThe area&4 {area} &calready exists in this land &8(&7Land:&2 {land}&8)&c. &7Please choose a different name.'
       max: '&cYou can''t create more areas for this land. &7You reached your limit of&3 {max} &7areas. Permisssion: lands.areas.NUMBER'
 
@@ -230,6 +234,7 @@ command:
   general:
     land-not-exist: '&cThe land&2 {land} &cdoesn''t exist. &7There''s no land with the name&2 {land} &7in this world.'
     area-not-exist: '&cArea&4 {area} &cdoes not exist in land&4 {land}&c. &7Typo?'
+    role-not-exist: '&cRole&e {role} &cdoes not exist in the area&4 {area} &cof land&4 {land}&c. &7Typo?'
     land-not-member: '&cYou''re not trusted in land&4 {land}&c. &7Use &8/&3Lands menu &7to see the lands you''re a member of.'
     land-no-action: '&cYou''re not member of any land, in this world, where you''re allowed to do this &8(&4{setting}&8)&c. &7Use &8/&3Land create &7to create one.'
     name-exists: '&cThe name&4 {name} &cis already taken by another land. &7You need to choose a different one.'
@@ -273,9 +278,10 @@ command:
     disabled: '#t#&5&lSelection{newline}&c&lMode disabled'
     world: '&cBoth positions must be in the same world. &7Please set position one and position two in the same world.'
     pos:
-      cancelled: '&cYou can''t set a selection here. &7This chunk belongs to a other management lands. Name:&b {lands}'
+      warn: '&cWarning: &7This chunk belongs to a other management plugin. Name:&3 {plugin}'
+      cancelled: '&cYou can''t set a selection here. &7This chunk belongs to a other management plugin. Name:&b {plugin}'
       one: '#t#&5&lSelection{newline}&b&lPos 1 &8-> &7Set'
-      two: '#t#&5&lSelection{newline}&b&lPos 2name-exists &8-> &7Set'
+      two: '#t#&5&lSelection{newline}&b&lPos 2 &8-> &7Set'
     area:
       conflicts: '&cFound&4 {conflicts} &cconflict(s) with chunks already assigned to area(s). &7Use &8/&3Lands selection assgin {area} confirm &7to confirm the override. Conflicts belong to these areas: {areas}'
       assigned: '&7You successful assigned&3 {chunks} &7chunks to area&6 {area} &8(&7Land:&2 {land}&8)&7.'
@@ -303,7 +309,7 @@ command:
     selection: '&7You successfully unclaimed this selection. Please note that only chunks got unclaimed in which you were the owner.'
   delete:
     confirm: '&cYou need to confirm this action. &7Use &8/&3Land delete {land} confirm&7.'
-    success: '&7Successfully deleted this land &8(&7Land:&2 {land}&8)&7.'
+    success: '&7Successfully deleted this land &8(&7Land:&2 {land}&8)&7. You got&e ${back} &7back.'
     broadcast: '&7The land&2 {land} &7was deleted by&3 {player}&7.'
 
   trust:
@@ -387,6 +393,11 @@ command:
     activated: '&7Activated land chat. Send a message in public chat to chat with your land. &5NOTE: &7Lands will take your &8/&3Lands edit &7land as the chat land.'
     deactivated: '&7Successfully deactivated land chat.'
     formats: '&a{land} &8| {role} &7{player} &8»&f {message}'
+
+  view:
+    toggle:
+      enabled: '&7You sucessfully enabled permanent land view outline. &7To disable it, just execute this command again.'
+      disabled: '&7You successfully disabled your current land view mode.'
 
 list:
   views:
@@ -501,7 +512,7 @@ wars:
         war: '&cYour land currently can''t join another war. &7The current war needs to end first.'
         war-defender: '&cThe other land is currently at war. &7Please try again when their war is finished.'
         declaration: '&cYour land already has an upcoming war. &7You can check it out in your lands menu.'
-        declaration-defender: '&cThe other land already has a war declaration. &7Please try again in {time}.'
+        declaration-def: '&cThe other land already has a war declaration. &7Please try again in {time}.'
       is-ally: '&cYou can''t declare war against this land, because it''s your ally. &7Yours and the target land are part of the same nation.'
       success: '&7Your land&c {attacker} &7successfully declared war against land&a {defender}&7. War will start in&5 ~{time}&7.'
       target:

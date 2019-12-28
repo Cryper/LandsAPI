@@ -12,7 +12,7 @@ general:
   # PRE configured languages:
   # English (en-US)
   # French (fr-FR) by Kittle
-  # German (de-DE) by XjojoX
+  # German (de-DE) by Cryper
   # Hungarian (hu-HU) by gbalint
   # Italian (it-IT) by MiniMoro
   # Russian (ru-RU) by Envel
@@ -51,13 +51,6 @@ general:
   # This setting requires server reload / restart.
   claim-worlds_list:
     - world
-
-  # Should players be able to build in a wilderness?
-  # NOTE - IMPORTANT: If you want to use WorldGuard in a world to set global flags, you need to remove the world from this list. Otherwise, the flags might not work correctly.
-  # NOTE - IMPORTANT: Also the option disallow-wilderness is not needed, if you use WorldGuard for wilderness flags.
-  # This setting requires server reload / restart.
-  disallow-wilderness_list:
-    - InsertWorldHere
 
   # Should safezones stay in the cache
   # and not be unloaded?
@@ -251,14 +244,7 @@ land:
         # NOTE: It's recommended to let this deactivated for this role.
         land_claim:
           default_5: false
-          display_17: true
-        #
-        # LAND_SPAWN_SET
-        # Should this role be able to set / change the land spawn?
-        # NOTE: It's recommended to let this deactivated for this role.
-        land_spawn_set:
-          default_54: false
-          display_18: true
+          display_17: false
         #
         # LAND_CLAIM_BORDER
         # Should visitors be able to claim land for a other land directly at the border of the land?
@@ -266,13 +252,12 @@ land:
           default_67: false
           display_55: true
         #
-        # SETTING_EDIT_VARIOUS
-        # Should this role be able to edit various land settings,
-        # like changing the land name or title.
+        # SPAWN_SET
+        # Should this role be able to set / change the land spawn?
         # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_various:
-          default_79: false
-          display_56: false
+        spawn_set:
+          default_54: false
+          display_18: false
 
     # Admins are members of a land, which have the admin role.
     # NOTE: Admins are NOT server administrators. You can change the role name in your language configuration file.
@@ -285,31 +270,17 @@ land:
           default_9: false
           display_57: true
         #
-        # LAND_SPAWN_SET
-        # Should this role be able to set / change the land spawn?
-        land_spawn_set:
-          default_52: false
-          display_58: true
-        #
-        # LAND_SPAWN_TELEPORT
-        # Should this role be able to teleport to land spawn?
-        land_spawn_teleport:
-          default_64: true
-          display_59: true
-        #
         # LAND_CLAIM_BORDER
         # Should visitors be able to claim land for a other land directly at the border of the land?
         land_claim_border:
           default_68: false
           display_60: true
         #
-        # SETTING_EDIT_VARIOUS
-        # Should this role be able to edit various land settings,
-        # like changing the land name or title.
-        # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_various:
-          default_75: false
-          display_61: true
+        # SPAWN_SET
+        # Should this role be able to set / change the land spawn?
+        spawn_set:
+          default_52: false
+          display_58: true
         #
         # BALANCE_WITHDRAW
         # Should this role be able to withdraw money from the lands balance (/Lands withdraw)?
@@ -390,21 +361,6 @@ taxes:
     # So only lands, which are older than x seconds, will need to pay this.
     # Timeunit is seconds.
     nopay-time: 2h
-
-  # Menu settings
-  menu:
-    # Set how much $ the add items (+) should add to the taxes.
-    add:
-      # Item 1. Default is 1$ per click.
-      1_a: 1
-      2_a: 100
-      3_a: 1000
-    # Set how much $ the remove items (-) should remove from the taxes.
-    remove:
-      # Item 1. Default is -1$ per click.
-      1_r: 1
-      2_r: 100
-      3_r: 1000
 
 
 
@@ -545,7 +501,6 @@ chunk:
       # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
       animals_list:
         - 'BAT'
-        - 'BLAZE'
         - 'CAT'
         - 'CHICKEN'
         - 'COD'
@@ -661,17 +616,17 @@ chunk:
           default_71: false
           display_11: false
         #
-        # SPAWN_TELEPORT
-        # Should this role be able to teleport to spawn?
-        spawn_teleport:
-          default_62: false
-          display_15: true
-        #
         # LAND_ENTER
         # Should this role be able to enter the land?
         land_enter:
           default_92: true
           display_71: true
+        #
+        # SPAWN_TELEPORT
+        # Should this role be able to teleport to spawn?
+        spawn_teleport:
+          default_62: false
+          display_15: true
 
     # Members are all players, wich are trusted in the chunk and have no admin role.
     member:
@@ -748,17 +703,17 @@ chunk:
           default_70: true
           display_29: true
         #
-        # SPAWN_TELEPORT
-        # Should this role be able to teleport to spawn?
-        spawn_teleport:
-          default_63: true
-          display_54: false
-        #
         # LAND_ENTER
         # Should this role be able to enter the land?
         land_enter:
           default_93: true
           display_72: true
+        #
+        # SPAWN_TELEPORT
+        # Should this role be able to teleport to spawn?
+        spawn_teleport:
+          default_63: true
+          display_54: false
 
       management:
         #
@@ -898,17 +853,17 @@ chunk:
           default_69: true
           display_46: true
         #
-        # SPAWN_TELEPORT
-        # Should this role be able to teleport to spawn?
-        spawn_teleport:
-          default_64: true
-          display_59: false
-        #
         # LAND_ENTER
         # Should this role be able to enter the land?
         land_enter:
           default_94: true
           display_73: true
+        #
+        # SPAWN_TELEPORT
+        # Should this role be able to teleport to spawn?
+        spawn_teleport:
+          default_64: true
+          display_59: false
 
       management:
         #
@@ -1168,6 +1123,9 @@ random-teleport:
   backup: 'world'
   # Should players be able to teleport to claimed land?
   allow-land: false
+  # Disallow teleportation to chunks that aren't generated yet?
+  # NOTE: It's recommended to keep this enabled to improve performance
+  disallow-new-chunks: true
   # Prevent oceans?
   prevent-oceans: true
   # Wait time until the player will be teleported.
@@ -1353,7 +1311,7 @@ wars:
   duration_2: 36h
 
   # Allow players doing the following things in the enemy land (only during war).
-  # Avialible actions: https://github.com/Angeschossen/Lands/blob/master/LandsAPI/src/me/angeschossen/lands/api/enums/LandsAction.java
+  # Avialible actions: https://github.com/Angeschossen/LandsAPI/blob/master/LandsAPI/src/main/java/me/angeschossen/lands/api/role/enums/RoleSetting.java
   # NOTE: PLACE_SCAFFOLDING is only available in spigot 1.14.x or higher.
   role-settings_list:
     - ATTACK_PLAYER
