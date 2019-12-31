@@ -1,8 +1,4 @@
-+ ADDED disallow-new-chunks option for /Lands wild
-    Enabled by default.
-
-+ ADDED German GUI translation by @Cryper
++ ADDED Fade timeout for chat actions (3 seconds)
 
 
-# FIXED Removed uneccesary data save
-# FIXED Block dispense issue
+# UPADED German GUI translation by @Cryper

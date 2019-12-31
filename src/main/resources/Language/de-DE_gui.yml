@@ -201,8 +201,10 @@ gui:
       trusted-players:
         name: '&8> &6Vertraute Spieler'
         lore:
-        - '&7Zeigt eine Liste aller vertrauten Spieler'
-        - '&7in deinem Land an.Auch die nur in einem'
+        - '&7Zeigt eine Liste aller '
+        - '&7vertrauten Spieler'
+        - '&7in deinem Land an.'
+        - '&7Auch die nur in einem'
         - '&7Gebiet vertraut sind.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 14
@@ -210,7 +212,7 @@ gui:
         name: '&8> &6Einladungen'
         lore:
         - '&7Gesendete Einladungen widerrufen'
-        - '&7oder um Informationen anzuzeige'
+        - '&7oder um Informationen anzuzeigen'
         - ' '
         - '&8- &7Die Einladungen'
         - '  &7machen einen Spieler'
@@ -229,16 +231,16 @@ gui:
       land-settings:
         name: '&8> &6Land Einstellung'
         lore:
-        - '&7Hier kannst du EInstellungen vornehmen,'
+        - '&7Hier kannst du Einstellungen vornehmen,'
         - '&7wie z.b Mob Spawn deaktivieren.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
       roles:
-        name: '&8> &6Globale Rolle'
+        name: '&8> &6Globale Rollen'
         lore:
-        - '&7Zeigt die globale Rolle.'
+        - '&7Zeigt die globale Rollen.'
         - ' '
-        - '&8- &7Globale Rolle wird automatisch'
+        - '&8- &7Globale Rollen wird automatisch'
         - '  &7zu jedem Gebiet hinzugefügt.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
@@ -252,6 +254,13 @@ gui:
         - '  &7einem Gebiet gehört.'
         material: GOLD_INGOT
         slot: 33
+      various:
+        name: '&8> &6Verschiedenes'
+        lore:
+        - '&7Änder den Namen'
+        - '&7oder den Titel des Landes.'
+        material: BEACON
+        slot: 34
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -304,7 +313,7 @@ gui:
       page_previous:
         name: '&9Vorherige Seite'
         lore:
-        - '&&7Vorherige Seite:&9 {previous}'
+        - '&7Vorherige Seite:&9 {previous}'
         - ' '
         - '&8- &7Zurzeit:&3 {current}'
         material: ARROW
@@ -312,7 +321,7 @@ gui:
       page_next:
         name: '&aNächste Seite'
         lore:
-        - '&7GNächste Seite:&9 {next}'
+        - '&7Nächste Seite:&9 {next}'
         - ' '
         - '&8- &7Zurzeit:&3 {current}'
         material: ARROW
@@ -518,7 +527,7 @@ gui:
         - '&7Hier kannst du einige'
         - '&7Informationen zu dem'
         - '&7Gebiet sehen. Dies hilft'
-        - '&7dir den Überbklick zu behalten.'
+        - '&7dir den Überblick zu behalten.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
       chunks:
@@ -542,7 +551,8 @@ gui:
         - ' '
         - '&8- &7Die Einladungen'
         - '  &7machen einen Spieler'
-        - '  &7zu einem vertrauten des’ -’   &7ganzen Landes.'
+        - '  &7zu einem vertrauten des'
+        - '  &7ganzen Landes.'
         material: WRITABLE_BOOK
         slot: 15
       management:
@@ -693,7 +703,7 @@ gui:
     size: 36
     f:
       send:
-        name: '&aEInladung versenden'
+        name: '&aEinladung versenden'
         lore:
         - '&7Versendet eine Einladung um'
         - '&7einen Spieler in dem Gebiet zu vertrauen.'
@@ -806,7 +816,7 @@ gui:
       object:
         name: '&7{role}'
         lore:
-        - '&7Drück hier um dei Rolle zu bearbeiten.'
+        - '&7Drück hier um die Rolle zu bearbeiten.'
         material: PLAYER_HEAD
         from: 10
         to: 18
@@ -1314,7 +1324,7 @@ gui:
         from: 10
         to: 27
       balance_withdraw:
-        name: '&6Geld abheben von der Landesbank'
+        name: '&6Geld von der Landesbank abheben'
         lore:
         - '&7Status: {enabled}'
         - '&7Freigeschaltet: {unlocked}'
@@ -1626,56 +1636,56 @@ gui:
     size: 27
     s:
       plus-1:
-        name: '&aAdd $1'
+        name: '&aErhöhen um um $100'
         lore:
-        - '&7Add $1 to'
-        - '&7tax value.'
+        - '&7Erhöt die Steuer'
+        - '&7um $100.'
         material: GLOWSTONE_DUST
         slot: 11
         amount: 1
         data:
           value: 1.0
       plus-2:
-        name: '&aAdd $100'
+        name: '&aErhöhen um um $100'
         lore:
-        - '&7Add $100 to'
-        - '&7tax value.'
+        - '&7Erhöt die Steuer'
+        - '&7um $100.'
         material: GLOWSTONE_DUST
         slot: 12
         data:
           value: 100.0
       plus-3:
-        name: '&aAdd $1000'
+        name: '&aErhöhen um um $1000'
         lore:
-        - '&7Add $1000 to'
-        - '&7tax value.'
+        - '&7Erhöt die Steuer'
+        - '&7um $1000.'
         material: GLOWSTONE_DUST
         slot: 13
         data:
           value: 1000.0
       minus-3:
-        name: '&cRemove $1000'
+        name: '&aVerringern um $1000'
         lore:
-        - '&7Remove $1000 from'
-        - '&7tax value.'
+        - '&7Verringert die Steuer'
+        - '&7um $1000.'
         material: REDSTONE
         slot: 15
         data:
           value: 1000.0
       minus-2:
-        name: '&cRemove $100'
+        name: '&aVerringern um $100'
         lore:
-        - '&7Remove $100 from'
-        - '&7tax value.'
+        - '&7Verringert die Steuer'
+        - '&7um $100.'
         material: REDSTONE
         slot: 16
         data:
           value: 100.0
       minus-1:
-        name: '&cRemove $1'
+        name: '&aVerringern um $1'
         lore:
-        - '&7Remove $1 from'
-        - '&7tax value.'
+        - '&7Verringert die Steuer'
+        - '&7um $1.'
         material: REDSTONE
         slot: 17
         data:
@@ -2045,7 +2055,7 @@ gui:
         from: 1
         to: 45
   settings_various:
-    title: Various Settings
+    title: Andere Einstellungen
     size: 27
     s: {}
     f:
@@ -2420,56 +2430,56 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 19
       plus-1:
-        name: '&aAdd $1'
+        name: '&aErhöhen um $1'
         lore:
-        - '&7Add $1 to the'
-        - '&7tribute value.'
+        - '&7Erhöt den Tribut'
+        - '&7um $1.'
         material: GLOWSTONE_DUST
         slot: 11
         amount: 1
         data:
           value: 1.0
       plus-2:
-        name: '&aAdd $100'
+        name: '&aErhöhen um $100'
         lore:
-        - '&7Add $100 to the'
-        - '&7tribute value.'
+        - '&7Erhöt den Tribut'
+        - '&7um $100.'
         material: GLOWSTONE_DUST
         slot: 12
         data:
           value: 100.0
       plus-3:
-        name: '&aAdd $1000'
+        name: '&aErhöhen um $1000'
         lore:
-        - '&7Add $1000 to the'
-        - '&7tribute value.'
+        - '&7Erhöt den Tribut'
+        - '&7um $1000.'
         material: GLOWSTONE_DUST
         slot: 13
         data:
           value: 1000.0
       minus-3:
-        name: '&cRemove $1000'
+        name: '&cVerringern um $1000'
         lore:
-        - '&7Remove $1000 from'
-        - '&7the tribute value.'
+        - '&7Verringert den Tribut'
+        - '&7um $1000.'
         material: REDSTONE
         slot: 15
         data:
           value: 1000.0
       minus-2:
-        name: '&cRemove $100'
+        name: '&cVerringern um $100'
         lore:
-        - '&7Remove $100 from'
-        - '&7the tribute value.'
+        - '&7Verringert den Tribut'
+        - '&7um $100.'
         material: REDSTONE
         slot: 16
         data:
           value: 100.0
       minus-1:
-        name: '&cRemove $1'
+        name: '&cVerringern um $1'
         lore:
-        - '&7Remove $1 from'
-        - '&7the tribute value.'
+        - '&7Verringert den Tribut'
+        - '&7um $1.'
         material: REDSTONE
         slot: 17
         data:
@@ -2704,4 +2714,45 @@ gui:
       placeholder_2:
         material: GRAY_STAINED_GLASS_PANE
         from: 19
+        to: 27
+  land_various:
+    title: Andere Einstellungen
+    size: 27
+    s: {}
+    f:
+      name:
+        name: '&8> &6Land Name'
+        lore:
+        - '&7Setzt ein neuen'
+        - '&7Namen für das Land.'
+        - ' '
+        - '&8- &7Jetziger Name:'
+        - '  &a{name}'
+        material: NAME_TAG
+        slot: 12
+      title:
+        name: '&8> &6Titel Nachricht'
+        lore:
+        - '&7Änder den Titel'
+        - '&7des Landes.'
+        - ' '
+        - '&8- &7Bisheriger Titel:'
+        - '  {title}'
+        - ' '
+        - '&7Verfügbare Platzhalter'
+        - '  &8> &a%owner% &8= &7Land Besitzer'
+        - '  &8> &a%player% &8= &7Spieler der das Land betritt'
+        material: OAK_SIGN
+        slot: 16
+      back:
+        name: '&cZurück'
+        lore:
+        - '&7Zurück zu'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
         to: 27

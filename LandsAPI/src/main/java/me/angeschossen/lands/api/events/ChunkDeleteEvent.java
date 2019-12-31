@@ -14,22 +14,25 @@ public class ChunkDeleteEvent extends Event implements Cancellable {
     private final Land land;
 
     public ChunkDeleteEvent(String world, Land land, int x, int z) {
-        this.world = world; this.x = x; this.z = z;
+        this.world = world;
+        this.x = x;
+        this.z = z;
         this.land = land;
     }
 
-    public Land getLand(){
+    public Land getLand() {
         return land;
     }
-    public int getX(){
+
+    public int getX() {
         return x;
     }
 
-    public int getZ(){
+    public int getZ() {
         return z;
     }
 
-    public String getWorldName(){
+    public String getWorldName() {
         return world;
     }
 

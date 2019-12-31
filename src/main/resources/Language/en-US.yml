@@ -228,7 +228,8 @@ message:
       delete: '&7Please enter the name of the area, which you want to delete.'
       exists: '&cThe area&4 {area} &calready exists in this land &8(&7Land:&2 {land}&8)&c. &7Please choose a different name.'
       max: '&cYou can''t create more areas for this land. &7You reached your limit of&3 {max} &7areas. Permisssion: lands.areas.NUMBER'
-
+    title: '&7Please enter a new title for this land. You can include colorcodes.'
+    rename: '&7Please enter a new name for this land. Spaces are not allowed.'
 
 command:
   general:

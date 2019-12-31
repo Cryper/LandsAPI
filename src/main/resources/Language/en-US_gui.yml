@@ -335,6 +335,13 @@ gui:
           - '  &7not member of any area.'
         material: GOLD_INGOT
         slot: 33
+      various:
+        name: '&8> &6Various'
+        lore:
+          - '&7Rename your land or'
+          - '&7set a new title.'
+        material: BEACON
+        slot: 34
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2111,13 +2118,13 @@ gui:
         from: 1
         to: 45
 
-  settings_various:
+  land_various:
     title: 'Various Settings'
     size: 27
     s: {}
     f:
       name:
-        name: '&bLand Name'
+        name: '&8> &6Land Name'
         lore:
           - '&7Set a new name'
           - '&7for this land.'
@@ -2127,7 +2134,7 @@ gui:
         material: NAME_TAG
         slot: 12
       title:
-        name: '&bTitle Message'
+        name: '&8> &6Title Message'
         lore:
           - '&7Change the title'
           - '&7message of the land.'
