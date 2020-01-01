@@ -1,4 +1,1 @@
-+ ADDED Fade timeout for chat actions (3 seconds)
-
-
-# UPADED German GUI translation by @Cryper
++ ADDED Support for slimefun

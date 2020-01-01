@@ -5,8 +5,10 @@ import me.angeschossen.lands.api.land.Land;
 import me.angeschossen.lands.api.land.LandChunk;
 import me.angeschossen.lands.api.land.LandWorld;
 import me.angeschossen.lands.api.player.LandPlayer;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -14,9 +16,12 @@ import java.util.concurrent.CompletableFuture;
 
 public class LandsIntegration implements LandsIntegrator {
 
-    public LandsIntegration(Plugin plugin, boolean isPublic) {
-
+    public LandsIntegration(@NotNull String name, boolean isPublic) {
     }
+
+    public LandsIntegration(@NotNull Plugin plugin, boolean isPublic) {
+    }
+
 
     @Override
     public LandPlayer getLandPlayer(UUID playerUUID) {
@@ -60,7 +65,7 @@ public class LandsIntegration implements LandsIntegrator {
 
     @Override
     public String initialize() {
-       return null;
+        return null;
     }
 
     @Override
