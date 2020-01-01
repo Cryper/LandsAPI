@@ -285,7 +285,7 @@ command:
       two: '#t#&5&lSelection{newline}&b&lPos 2 &8-> &7Set'
     area:
       conflicts: '&cFound&4 {conflicts} &cconflict(s) with chunks already assigned to area(s). &7Use &8/&3Lands selection assgin {area} confirm &7to confirm the override. Conflicts belong to these areas: {areas}'
-      assigned: '&7You successful assigned&3 {chunks} &7chunks to area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+      assigned: '&7You successfully assigned&3 {chunks} &7chunks to area&6 {area} &8(&7Land:&2 {land}&8)&7.'
 
   claim:
     already: '&cYou can''t claim this chunk. &7It already belongs to land&2 {land}&7.'
@@ -379,7 +379,7 @@ command:
 
   deposit:
     number: '&7You need to specify an amount of money. Use &8/&aLand deposit &8<&aAmount&8> &7or &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
-    success: '&7You successful put&b ${cost} &7in the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
+    success: '&7You successfully put&b ${cost} &7in the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
   withdraw:
     number: '&7You need to specify an amount of money. Use &8/&aLand withdraw &8<&aAmount&8> &7or &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
     balance: '&7There''s not enough money in the land bank. There''s only&b ${bank} &7in the land bank. Expected:&b ${take} &8(&7Land:&e {land}&8)'

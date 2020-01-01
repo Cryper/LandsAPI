@@ -1,1 +1,3 @@
-+ ADDED Support for slimefun
+# FIXED Disallow animal spawn in wilderness not working
+# FIXED Wrong placeholder at /Lands admin land <land> rename
+# FIXED Spelling mistake in en-US
