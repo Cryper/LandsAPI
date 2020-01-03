@@ -750,7 +750,7 @@ gui:
         - '&7any invites.'
         - ' '
         - '&8- &7To invite someone click'
-        - '  &7the invite button below.'
+        - '  &7the invite button below.s'
         material: OAK_SIGN
         from: 10
         to: 27
