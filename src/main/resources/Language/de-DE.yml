@@ -1,4 +1,3 @@
-
 general:
   prefix: '&8[&aLands&8] '
   wYes: '&aJa'
@@ -45,8 +44,10 @@ general:
       line-2: '&cKein Land'
       line-3: '&czum zeigen.'
       line-4: ' '
+
   autoAction:
     claim: '&aChunk besetzen'
+
   map:
     yours: '&a▉ '
     others: '&c▉ '

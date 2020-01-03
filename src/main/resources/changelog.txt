@@ -1,3 +1,16 @@
 # FIXED Startup error on 1.13.x
 # IMPROVED Chatactions fade time
 # IMPROVED Protection checks performance
+
++ ADDED Option to define blocks that can be placed / broken in a war (in a land):
+      # Allow the placement of specific blocks if the land part of a war.
+      block-place_list:
+        - LADDER
+        - VINE
+        - SCAFFOLDING
+
+      # Allow breaking of specific blocks if the land part of a war.
+      block-break_list:
+        - LADDER
+        - VINE
+        - SCAFFOLDING
