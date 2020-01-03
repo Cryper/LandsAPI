@@ -30,7 +30,7 @@ general:
     title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
     entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
     next-page: '&7Next page: &8/&2Lands top {next}'
-    last-updated: '&7Last updated: {time}'
+    last-updated: '&7Last updated: {time} &7ago'
     footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
   integration:
     dynmap:

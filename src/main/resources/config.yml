@@ -39,9 +39,6 @@ general:
     # 24 hour format:
     # MM/dd/yyyy HH:mm:ss
     general: 'MM/dd/yyyy hh:mm:ss'
-    # Format for things like cooldown etc.
-    # 'hh:mm:ss'.
-    small: 'mm:ss'
     # Format for news messages in the land menu (inbox).
     inbox: 'MM/dd hh'
 
@@ -427,12 +424,15 @@ chunk:
       default_13: false
       # Display this setting in the land settings menu? If set to false, players won't be able to change it.
       display_62: true
+      # Automatically enable this setting during war?
+      during-war: false
     #
     # TNT_GRIEFING
     # Allow tnt to destroy blocks in the chunk / land?
     tnt_griefing:
       default_65: false
       display_63: true
+      during-war_2: false
     #
     # PISTON_GRIEFING
     # Allow pistons from a wilderness to push into the chunk / land?
@@ -440,6 +440,8 @@ chunk:
     piston_griefing:
       default_14: false
       display_64: true
+      during-war_3: false
+
     #
     # MONSTER_SPAWN
     # Allow monster spawning in the chunk / land?
@@ -452,6 +454,8 @@ chunk:
       include-spawners: false
       # Display this setting in the land settings menu? If set to false, players won't be able to change it.
       display_65: true
+      # Automatically enable this setting during war?
+      during-war_4: false
       # If monster spawning disabled, these monsters won't spawn. So you can decide, which monsters shouldn't spawn
       # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
       monsters_list:
@@ -497,6 +501,8 @@ chunk:
       default_61: true
       # Display this setting in the land settings menu? If set to false, players won't be able to change it.
       display_66: true
+      # Automatically enable this setting during war?
+      during-war_5: false
       # If animals spawning disabled, these animals won't spawn. So you can decide, which animals shouldn't spawn
       # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
       animals_list:
@@ -1110,14 +1116,14 @@ random-teleport:
   # NOTE: World names are case-sensitive. If you don't enter them correctly, issues might occur.
   wild-worlds_list:
     - world
-  # Max x and z block radius value
-  # NOTE: Lands will only teleport to already generated chunks. Therefore, you may not need this feature. If so, just set it to 0 (this disables it).
-  # This setting requires server reload / restart.
-  max-radius:
-    x: 0
-    z: 0
-  # Set the minimum distance between the players current position and the teleport destination.
-  min-distance: 500
+
+  distance:
+    # Max distance from world spawn (/setworldspawn)
+    # This setting requires server reload / restart.
+    max: 15000
+    # Set the minimum distance between the players current position and the teleport destination.
+    min: 500
+
   # Players will be random teleported in this world, if they're currently not in a world defined above.
   # NOTE: The world name is case-sensitive.
   backup: 'world'
@@ -1316,9 +1322,18 @@ wars:
   role-settings_list:
     - ATTACK_PLAYER
     - LAND_ENTER
-    - PLACE_LADDER
-    - PLACE_VINE
-    - PLACE_SCAFFOLDING
+
+  # Allow the placement of specific blocks if the land part of a war.
+  block-place_list:
+    - LADDER
+    - VINE
+    - SCAFFOLDING
+
+  # Allow breaking of specific blocks if the land part of a war.
+  block-break_list:
+    - LADDER
+    - VINE
+    - SCAFFOLDING
 
   # Cutomize what happens when a defender surrenders.
   surrender:
@@ -1354,6 +1369,15 @@ wars:
     # Configure when a land should get a war shield.
     # If a war shield is active, other lands can't attack the land.
     activation:
+      # Give war shield to a new land?
+      # Use 0 to disable this.
+      # TimeUnits:
+      # Seconds: s
+      # Minutes: m
+      # Hours: h
+      # Days: d
+      land-creation: 1d
+
       # Set a war shield for a land after it surrendered?
       # If you want to disable this, just set the value to 0.
       surrender:
