@@ -278,7 +278,7 @@ command:
     selection: '&7You successfully claimed&3 {chunks} &7chunks for this land &8(&7Land:&2 {land}&8)&7. You paid&c ${cost}&7.'
   leave:
     land-owner: '&cYou can''t leave this land. &7As the owner of this land you need to delete it. Use &8/&3Lands delete&7.'
-    selection: '&7You successfully left&b {chunks} &7from your selection. The chunks, in which you were the owner, got deleted.'
+    selection: '&7You successfully left&b {chunks} &7from your selection. The chunks, in which you were the owner, gost deleted.'
     land:
       success: '&7Successfully left land&2 {land}&7. You dont have access to this land anymore.'
     chunk:
