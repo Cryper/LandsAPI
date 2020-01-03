@@ -1,18 +1,39 @@
 package me.angeschossen.lands.api.land;
 
+import me.angeschossen.lands.api.land.enums.LandSetting;
 import me.angeschossen.lands.api.role.enums.RoleSetting;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
+import org.jetbrains.annotations.Nullable;
 
 public interface LandWorld {
 
-    boolean canActionWithResponse(Player player, Location location, RoleSetting landsAction);
+    /**
+     * Check can execute action in wilderness
+     * @param player Player
+     * @param roleSetting Setting
+     * @param sendMessage Send deny message?
+     * @return Result
+     */
+    boolean canWildernessSetting(@NotNull Player player,@NotNull RoleSetting roleSetting, boolean sendMessage);
 
-    boolean canPvP(Player attacker, Player target, Location location);
+    /**
+     * Check can execute action in wilderness
+     * @param player Player
+     * @param landsAction Setting
+     * @return Result
+     */
+    boolean canActionWithResponse(@NotNull Player player,@NotNull  Location location, RoleSetting landsAction);
+
+    boolean canActionWithResponse(@NotNull Player player,@NotNull  Location location, @Nullable Material material, RoleSetting landsAction);
+
+    boolean hasLandSetting(@NotNull Location location,@NotNull  LandSetting landSetting);
+
+    boolean canAction(@NotNull Player player,@NotNull  Location location,@NotNull  RoleSetting landsAction);
 
     /**
      * Check if player can action. This also contains the setting disallow-wilderness.
@@ -22,7 +43,7 @@ public interface LandWorld {
      * @param landsAction Action
      * @return Will return false if he can't do this.
      */
-    boolean canAction(Player player, Location location, RoleSetting landsAction);
+    boolean canAction(@NotNull Player player,@NotNull  Location location, @Nullable Material material,@NotNull  RoleSetting landsAction);
 
     /**
      * Get name of world.
