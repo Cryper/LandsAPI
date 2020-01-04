@@ -362,7 +362,7 @@ command:
   chat:
     activated: '&7Activated land chat. Send a message in public chat to chat with your land. &5NOTE: &7Lands will take your &8/&3Lands edit &7land as the chat land.'
     deactivated: '&7Successfully deactivated land chat.'
-    formats: '&a{land} &8| {role} &7{player} &8»&f {message}'
+    format: '&a{land} &8| {role} &7{player} &8»&f {message}'
   view:
     toggle:
       enabled: '&7You sucessfully enabled permanent land view outline. &7To disable it, just execute this command again.'
