@@ -68,10 +68,10 @@ public interface Land {
     /**
      * Send message to online players of this land.
      *
-     * @param sender  Sender
+     * @param playerUUID  Sender
      * @param message Message
      */
-    void sendMessage(@NotNull Player sender,@NotNull String message);
+    void sendMessage(@NotNull UUID playerUUID, @NotNull String message);
 
     /**
      * Get id of land.

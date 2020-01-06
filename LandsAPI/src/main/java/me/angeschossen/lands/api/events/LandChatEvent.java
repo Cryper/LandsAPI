@@ -1,12 +1,17 @@
 package me.angeschossen.lands.api.events;
 
 import me.angeschossen.lands.api.land.Land;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.rmi.server.UID;
 import java.util.Collection;
+import java.util.UUID;
 
 
 public class LandChatEvent extends Event implements Cancellable {
@@ -14,13 +19,13 @@ public class LandChatEvent extends Event implements Cancellable {
     private boolean cancelled;
 
     private final String message;
-    private final Player sender;
+    private final UUID playerUID;
     private final Land land;
     private final Collection<Player> recipients;
 
-    public LandChatEvent(Land land, Player sender, Collection<Player> recipients, String message) {
+    public LandChatEvent(Land land, UUID playerUID, Collection<Player> recipients, String message) {
         this.land = land;
-        this.sender = sender;
+        this.playerUID = playerUID;
         this.message = message;
         this.recipients = recipients;
     }
@@ -33,8 +38,14 @@ public class LandChatEvent extends Event implements Cancellable {
         return land;
     }
 
+    @NotNull
+    public UUID getPlayerUID() {
+        return playerUID;
+    }
+
+    @Nullable
     public Player getSender() {
-        return sender;
+        return Bukkit.getPlayer(playerUID);
     }
 
     public String getMessage() {
