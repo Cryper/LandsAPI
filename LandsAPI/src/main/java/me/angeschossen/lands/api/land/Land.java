@@ -1,21 +1,22 @@
 package me.angeschossen.lands.api.land;
 
 import me.angeschossen.lands.api.land.enums.LandSetting;
+import me.angeschossen.lands.api.role.enums.ManagementSetting;
+import me.angeschossen.lands.api.role.enums.RoleSetting;
+import me.angeschossen.lands.api.war.enums.WarTeam;
 import me.angeschossen.lands.api.player.Invite;
 import me.angeschossen.lands.api.player.LandPlayer;
 import me.angeschossen.lands.api.player.TrustedPlayer;
 import me.angeschossen.lands.api.role.Role;
-import me.angeschossen.lands.api.role.enums.ManagementSetting;
-import me.angeschossen.lands.api.role.enums.RoleSetting;
 import me.angeschossen.lands.api.war.Nation;
 import me.angeschossen.lands.api.war.War;
 import me.angeschossen.lands.api.war.WarDeclaration;
-import me.angeschossen.lands.api.war.enums.WarTeam;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import org.jetbrains.annotations.Nullable;
+
 import java.util.Collection;
 import java.util.UUID;
 
@@ -65,6 +66,14 @@ public interface Land {
     String getName();
 
     /**
+     * Send message to online players of this land.
+     *
+     * @param sender  Sender
+     * @param message Message
+     */
+    void sendMessage(@NotNull Player sender,@NotNull String message);
+
+    /**
      * Get id of land.
      *
      * @return ID
@@ -73,6 +82,7 @@ public interface Land {
 
     /**
      * Get land name with color.
+     *
      * @return Land name with color
      */
     @NotNull
@@ -171,7 +181,7 @@ public interface Land {
      * Set role of trusted player.
      *
      * @param playerUUID UUID of player
-     * @param role   Role
+     * @param role       Role
      */
     void setRole(@NotNull UUID playerUUID, @NotNull Role role);
 
@@ -271,8 +281,9 @@ public interface Land {
     /**
      * Check if player can action with checking bypass permission
      * This will send a message to the player if he can't access the action and has no required bypass permission.
-     * @param player Player
-     * @param action Action
+     *
+     * @param player      Player
+     * @param action      Action
      * @param sendMessage Send message?
      * @return Will return false if player has no access and has no bypass permission
      */
