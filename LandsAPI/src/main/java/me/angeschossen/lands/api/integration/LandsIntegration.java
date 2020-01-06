@@ -54,6 +54,11 @@ public class LandsIntegration implements LandsIntegrator {
     }
 
     @Override
+    public Land getLand(String name) {
+        return null;
+    }
+
+    @Override
     public Plugin getPlugin() {
         return null;
     }

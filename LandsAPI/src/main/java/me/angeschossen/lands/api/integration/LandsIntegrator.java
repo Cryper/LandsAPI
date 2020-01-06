@@ -66,6 +66,8 @@ public interface LandsIntegrator {
      */
     LandWorld getLandWorld(String worldName);
 
+    Land getLand(String name);
+
     /**
      * Get's lands wich hooks Lands.
      *

@@ -1,24 +1,6 @@
-# FIXED Startup error on 1.13.x
-# IMPROVED Chatactions fade time
-# IMPROVED Protection checks performance
-# FIXED Role color issue
-
-+ ADDED Option to define blocks that can be placed / broken in a war (in a land):
-      # Allow the placement of specific blocks if the land part of a war.
-      block-place_list:
-        - LADDER
-        - VINE
-        - SCAFFOLDING
-
-      # Allow breaking of specific blocks if the land part of a war.
-      block-break_list:
-        - LADDER
-        - VINE
-        - SCAFFOLDING
-
-+ ADDED Option to auto enable land settings during a war:
-        #
-        # TNT_GRIEFING
-        # Allow tnt to destroy blocks in the chunk / land?
-        tnt_griefing:
-          during-war_2: false
+# IMPROVED Area data saving
+# FIXED Land title did not accept spaces
+# FIXED Dynmap unknown strings
+# FIXED /lands admin land * settings reset
+    did not change role settings
+# FIXED Missing placeholder at /Lands create
