@@ -1,6 +1,4 @@
-# IMPROVED Area data saving
-# FIXED Land title did not accept spaces
-# FIXED Dynmap unknown strings
-# FIXED /lands admin land * settings reset
-    did not change role settings
-# FIXED Missing placeholder at /Lands create
+# IMPROVED /Lands trust <player>
+Will now check if the player AND land already have an invite for the player
+
+# FIXED LandWildSearcher task error on startup

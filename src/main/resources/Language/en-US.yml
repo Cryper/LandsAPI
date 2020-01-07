@@ -89,7 +89,7 @@ help:
   command:
     help: '&8/&3Lands help &8[&3page&8] - &7Get help'
     edit: '&8/&3Lands edit &8<&3land&8> &8- &7Enter edit mode for land'
-    claim: '&8/&3Lands claim &8[&7auto&8] - &7Claim chunk'
+    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7Claim chunk'
     create: '&8/&3Lands create &8<&3name&8> - &7Create land'
     leave: '&8/&3Lands leave &8[&3land] &8- &7Leave chunk or land'
     unclaim: '&8/&3Lands unclaim &8- &7Unclaim chunk'
