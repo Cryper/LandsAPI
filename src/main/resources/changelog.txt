@@ -1,4 +1,5 @@
-# IMPROVED /Lands trust <player>
-Will now check if the player AND land already have an invite for the player
+# IMPROVED Moved non cancallabe events to be called asynch
+# FIXED War shields not settings and rewards not being called
 
-# FIXED LandWildSearcher task error on startup
++ ADDED Wilderness protection against fire from land
++ ADDED Wilderness protection against explosions from land

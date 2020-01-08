@@ -9,6 +9,8 @@
     <version>4.3.4.6</version>
     <name>LandsAPI</name>
 
+
+
     <repositories>
         <!-- Adds the Spigot Maven repository to the build -->
         <repository>
@@ -74,4 +76,9 @@
         </plugins>
     </build>
 
+    <properties>
+        <jar.finalName>${project.name}</jar.finalName>
+    </properties>
+
 </project>
+

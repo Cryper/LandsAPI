@@ -17,6 +17,8 @@ public interface LandWorld {
     @NotNull
     List<? extends Land> getTopLands();
 
+    @NotNull List<String> printTopLands(int page);
+
     /**
      * Check can execute action in wilderness
      * @param player Player
