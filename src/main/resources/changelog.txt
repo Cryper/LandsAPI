@@ -1,5 +1,8 @@
 # IMPROVED Moved non cancallabe events to be called asynch
 # FIXED War shields not settings and rewards not being called
 
++ ADDED Some new methods to the API
+Updated version can be found at github.
+
 + ADDED Wilderness protection against fire from land
 + ADDED Wilderness protection against explosions from land

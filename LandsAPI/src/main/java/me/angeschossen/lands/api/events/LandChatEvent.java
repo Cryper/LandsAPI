@@ -21,16 +21,16 @@ public class LandChatEvent extends Event implements Cancellable {
     private final String message;
     private final UUID playerUID;
     private final Land land;
-    private final Collection<Player> recipients;
+    private final Collection<UUID> recipients;
 
-    public LandChatEvent(Land land, UUID playerUID, Collection<Player> recipients, String message) {
+    public LandChatEvent(Land land, UUID playerUID, Collection<UUID> recipients, String message) {
         this.land = land;
         this.playerUID = playerUID;
         this.message = message;
         this.recipients = recipients;
     }
 
-    public Collection<Player> getRecipients() {
+    public Collection<UUID> getRecipients() {
         return recipients;
     }
 
@@ -39,7 +39,7 @@ public class LandChatEvent extends Event implements Cancellable {
     }
 
     @NotNull
-    public UUID getPlayerUID() {
+    public UUID getSenderUID() {
         return playerUID;
     }
 
