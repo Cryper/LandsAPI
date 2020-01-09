@@ -1,5 +1,6 @@
 package me.angeschossen.lands.api.land;
 
+import me.angeschossen.lands.api.events.LandChatEvent;
 import me.angeschossen.lands.api.land.enums.LandSetting;
 import me.angeschossen.lands.api.role.enums.ManagementSetting;
 import me.angeschossen.lands.api.role.enums.RoleSetting;
@@ -71,7 +72,7 @@ public interface Land {
      * @param playerUUID  Sender
      * @param message Message
      */
-    void sendMessage(@NotNull UUID playerUUID, @NotNull String message);
+    void sendMessage(@NotNull UUID playerUUID, @NotNull String message, @NotNull LandChatEvent.MessageSource messageSource);
 
     /**
      * Get id of land.

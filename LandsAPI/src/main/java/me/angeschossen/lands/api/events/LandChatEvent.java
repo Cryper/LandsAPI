@@ -22,12 +22,14 @@ public class LandChatEvent extends Event implements Cancellable {
     private final UUID playerUID;
     private final Land land;
     private final Collection<UUID> recipients;
+    private final MessageSource messageSource;
 
-    public LandChatEvent(Land land, UUID playerUID, Collection<UUID> recipients, String message) {
+    public LandChatEvent(Land land, UUID playerUID, Collection<UUID> recipients, String message, MessageSource messageSource) {
         this.land = land;
         this.playerUID = playerUID;
         this.message = message;
         this.recipients = recipients;
+        this.messageSource = messageSource;
     }
 
     public Collection<UUID> getRecipients() {
@@ -36,6 +38,14 @@ public class LandChatEvent extends Event implements Cancellable {
 
     public Land getLand() {
         return land;
+    }
+
+    public MessageSource getSource() {
+        return messageSource;
+    }
+
+    public enum MessageSource {
+        MINECRAFT, DISCORD, WEB
     }
 
     @NotNull
