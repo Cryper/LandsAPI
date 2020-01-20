@@ -1,11 +1,15 @@
 package me.angeschossen.lands.api.integration;
 
-import me.angeschossen.lands.api.land.Land;
+import me.angeschossen.lands.api.land.LandArea;
 import me.angeschossen.lands.api.land.LandChunk;
 import me.angeschossen.lands.api.land.LandWorld;
+import me.angeschossen.lands.api.land.Land;
 import me.angeschossen.lands.api.player.LandPlayer;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -21,32 +25,48 @@ public interface LandsIntegrator {
      * @return LandPlayer or null, if not cached
      * @since 2.5.7
      */
-    LandPlayer getLandPlayer(UUID playerUUID);
+    @Nullable
+    LandPlayer getLandPlayer(@NotNull UUID playerUUID);
+
+    /**
+     * Get world
+     *
+     * @param world World
+     * @return Will return null if is not a lands world
+     */
+    @Nullable
+    LandWorld getLandWorld(@NotNull World world);
 
     /**
      * Is claimed land?
-     * @param location Location
-     * @return Is claimed
-     */
-    boolean isClaimed(Location location);
-
-    /**
-     * Is claimed land?
-     * @param worldName Name of world
-     * @param x Chunk x
-     * @param z Chunk z
-     * @return Is claimed
-     */
-    CompletableFuture<Boolean> isClaimed(String worldName, int x, int z);
-
-    /**
-     * Get cached landChunk
      *
      * @param location Location
-     * @return LandChunk or null, if not cached
-     * @since 2.5.7
+     * @return Is claimed
      */
-    LandChunk getLandChunk(Location location);
+    boolean isClaimed(@NotNull Location location);
+
+    @Deprecated
+    CompletableFuture<Boolean> isClaimed(@NotNull String worldName, int x, int z);
+
+    /**
+     * Is claimed?
+     *
+     * @param world World
+     * @param x     Chunk x
+     * @param z     Chunk z
+     * @return true if claimed
+     */
+    boolean isClaimed(@NotNull World world, int x, int z);
+
+    /**
+     * This method is not supported anymore. Please use getLand or getArea instead.
+     *
+     * @param location Location
+     * @return null
+     */
+    @Deprecated
+    @Nullable
+    LandChunk getLandChunk(@NotNull Location location);
 
     /**
      * Get land.
@@ -56,7 +76,8 @@ public interface LandsIntegrator {
      * @return Land or null, if not exists.
      * @since 2.5.7
      */
-    Land getLand(String worldName, String landName);
+    @Deprecated
+    Land getLand(@NotNull String worldName, @NotNull String landName);
 
     /**
      * Get landWorld.
@@ -64,16 +85,60 @@ public interface LandsIntegrator {
      * @param worldName Name of world.
      * @return LandWorld or null, if it's not an landWorld.
      */
-    LandWorld getLandWorld(String worldName);
+    @Deprecated
+    LandWorld getLandWorld(@NotNull String worldName);
 
-    Land getLand(String name);
+    /**
+     * Get land by name
+     * Name is not case sensitive
+     *
+     * @param name Name
+     * @return Land
+     */
+    Land getLand(@NotNull String name);
+
+    /**
+     * Get land by location
+     * For permission you can use getArea instead.
+     *
+     * @param location Location
+     * @return Land or null if wilderness
+     */
+    @Nullable Land getLand(@NotNull Location location);
+
+    /**
+     * Get land
+     *
+     * @param world World
+     * @param x     Chunk x
+     * @param z     Chunk z
+     * @return Land or null if wilderness
+     */
+    @Nullable Land getLand(@NotNull World world, int x, int z);
+
+    /**
+     * Will return the area located in a land.
+     *
+     * @param location Location to check
+     * @return null if not claimed
+     */
+    @Nullable LandArea getArea(@NotNull Location location);
 
     /**
      * Get's lands wich hooks Lands.
      *
      * @return Plugin
      */
+    @Nullable
     Plugin getPlugin();
+
+    /**
+     * Get name of integration.
+     *
+     * @return Name
+     */
+    @NotNull
+    String getName();
 
     /**
      * Disables the APIHook
@@ -86,6 +151,7 @@ public interface LandsIntegrator {
      * @return Hook key, wich you should store
      * somewhere
      */
+    @NotNull
     String initialize();
 
     /**

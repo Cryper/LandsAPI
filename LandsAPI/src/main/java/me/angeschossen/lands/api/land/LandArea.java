@@ -13,6 +13,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * This class represents a area inside a land.
+ */
 public interface LandArea {
     String getName();
 

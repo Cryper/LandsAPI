@@ -1,2 +1,18 @@
-# FIXED Invites GUI menu trusting target wrong
-# FIXED Default land settings not applying
++ You can now create areas inside your land which sizes are actually defined by blocks
+instead of chunks. They are three-dimensional.
+
+This setting may be relevant to you:
+    # Area Settings
+    # Areas are created inside a land by blocks, not chunks.
+    area:
+      # Set the minimum size of a area (in blocks).
+      # With this setting you can force your players to organize their areas.
+      min-size: 60
+
+
++ ADDED /Lands spawn will not teleport to the initial claimed chunk if no spawn is set.
+
+# REMOVED Chunk menu
+# REMOVED Chunks menu
+# REMOVED Default area from areas menu
+# FIXED Lands wild ocean teleport.

@@ -62,7 +62,7 @@ general:
   # instead of the land from /Lands edit?
   # For /Lands claim you will still need
   # to set the claim land with /Land edit.
-  edit-loc-land: false
+  edit-loc-land: true
 
   # Set max number of digit numbers for economy values, such as claim costs, taxes etc.
   # This setting requires server reload / restart.
@@ -133,7 +133,7 @@ land:
     creation:
       # Automatically set land spawn on land creation (/Lands create)?
       # NOTE: The spawnpoint can always be changed with /Lands setspawn.
-      auto: false
+      auto: true
       # Force the spawn to be in the land.
       # NOTE: If you unclaim the chunk, where the land spawn is in,
       # Lands will automatically remove the land spawn.
@@ -141,7 +141,7 @@ land:
       # Costs
       cost:
         # Cost for first time set
-        set: 750.0
+        set: 0.0
         # Cost for changing spawn
         change: 400.0
 
@@ -778,9 +778,9 @@ chunk:
           default_80: false
           display_36: false
         #
-        # CHUNK_ASSIGN
+        # AREA_ASSIGN
         # Should this role be able to assign chunks to areas?
-        chunk_assign:
+        area_assign:
           default_76: false
           display_69: false
 
@@ -928,11 +928,19 @@ chunk:
           default_84: false
           display_53: true
         #
-        # CHUNK_ASSIGN
+        # AREA_ASSIGN
         # Should this role be able to assign chunks to areas?
-        chunk_assign:
+        area_assign:
           default_91: false
           display_70: true
+
+
+# Area Settings
+# Areas are created inside a land by blocks, not chunks.
+area:
+  # Set the minimum size of a area (in blocks).
+  # With this setting you can force your players to organize their areas.
+  min-size: 60
 
 
 # General protection settings
@@ -1022,48 +1030,34 @@ visualization:
       # Orange: 16753920
       color: 16753920
       duration: 20
-      rows: 2
-    # If the player is trusted in the chunk.
-    claimed:
-      particle_2: 'REDSTONE'
-      color_2: 65280
-      duration_2: 8
-      rows_2: 2
+      rows: 1
     # If the player is the land owner.
     own:
-      particle_3: 'REDSTONE'
+      particle_3: 'BARRIER'
       color_3: 65280
       duration_3: 4
-      rows_3: 2
-    # If the player is trusted in the chunk.
+      rows_3: 1
+    # If the player is trusted in the land.
     trusted:
-      particle_4: 'REDSTONE'
+      particle_4: 'BARRIER'
       color_4: 16776960
       duration_4: 4
-      rows_4: 2
-    # If player isn't trusted in the chunk.
+      rows_4: 1
+    # If player isn't trusted in the land.
     untrusted:
-      particle_5: 'REDSTONE'
+      particle_5: 'BARRIER'
       color_5: 16711680
       duration_5: 4
-      rows_5: 2
-    # Appears if you try to run an action, which you're not allowed to execute.
-    no-access:
-      particle_7: 'REDSTONE'
-      color_7: 16711680
-      duration_7: 4
-      rows_7: 2
+      rows_5: 1
     # Visualize chunk selection (/Lands selection)
     selection:
-      particle_8: 'REDSTONE'
+      particle_8: 'BARRIER'
       color_8: 16753920
       duration_8: 45
-      rows_8: 2
+      rows_8: 1
 
   # /Lands view
   view:
-    # Outline the whole land instead of just one chunk?
-    outline: true
     # Duration of land view.
     # NOTE: Time unit is seconds
     duration_8: 60
@@ -1131,7 +1125,7 @@ random-teleport:
   allow-land: false
   # Disallow teleportation to chunks that aren't generated yet?
   # NOTE: It's recommended to keep this enabled to improve performance
-  disallow-new-chunks: true
+  disallow-new-chunks: false
   # Prevent oceans?
   prevent-oceans: true
   # Wait time until the player will be teleported.
