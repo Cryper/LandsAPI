@@ -1,12 +1,12 @@
 package me.angeschossen.lands.api.player;
 
-import me.angeschossen.lands.api.role.enums.ManagementSetting;
 import me.angeschossen.lands.api.land.Land;
+import me.angeschossen.lands.api.role.enums.ManagementSetting;
 import me.angeschossen.lands.api.war.War;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-
 import org.jetbrains.annotations.Nullable;
+
 import java.util.UUID;
 
 public interface LandPlayer {

@@ -1,7 +1,6 @@
 package me.angeschossen.lands.api.integration;
 
 import me.angeschossen.lands.api.land.LandArea;
-import me.angeschossen.lands.api.land.LandChunk;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 

@@ -9,7 +9,6 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.rmi.server.UID;
 import java.util.Collection;
 import java.util.UUID;
 

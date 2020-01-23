@@ -1,10 +1,10 @@
 package me.angeschossen.lands.api.land;
 
 import me.angeschossen.lands.api.land.enums.LandSetting;
-import me.angeschossen.lands.api.role.enums.ManagementSetting;
-import me.angeschossen.lands.api.role.enums.RoleSetting;
 import me.angeschossen.lands.api.player.LandPlayer;
 import me.angeschossen.lands.api.role.Role;
+import me.angeschossen.lands.api.role.enums.ManagementSetting;
+import me.angeschossen.lands.api.role.enums.RoleSetting;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

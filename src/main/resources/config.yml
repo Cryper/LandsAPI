@@ -404,11 +404,12 @@ chunk:
 
   # This is needed for the /Lands admin give chunk <player> command
   give:
-    # Your permissions lands command to add permissions.
-    # {player} will get replaced with the playername.
-    add: 'Luckperms user {player} permission set'
-    # Your permissions lands command to remove permissions.
-    remove: 'Luckperms user {player} permission unset'
+    # Your permissions plugins command to add permissions.
+    # {player} will be replaced with the playername.
+    # {permission} will be replaced with the Lands permission.
+    add: 'Luckperms user {player} permission set {permission}'
+    # Your permission plugins command to remove permissions.
+    remove: 'Luckperms user {player} permission unset {permission}'
 
   # Edit settings of a land in a GUI menu.
   # This affects the following settings (flags).
@@ -556,7 +557,7 @@ chunk:
           default_15: false
           # Should this setting be displayed in the settings menu?
           # NOTE: Players won't be able to change this setting if display is set to false.
-          display: false
+          display: true
         #
         # BLOCK_BREAK
         # Should this role be able to break blocks?
@@ -947,7 +948,7 @@ area:
 protection:
   # When a projectile hits something in a claim.
   # Projectiles to be removed.
-  # This is useful, if you use a special arrow lands (for example explosive arrows), to prevent damage in lands.
+  # This is useful, if you use a special arrow plugin (for example explosive arrows), to prevent damage in lands.
   # View projectiles here (of the latest spigot version):
   # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Projectile.html
   # NOTE: Dispensers, which shoot from wilderness into lands
@@ -960,15 +961,6 @@ protection:
 # Top 10 lands leaderboard settings
 # Includes /Lands top, leaderboard signs and holograms
 top-lands:
-  # Should /Lands top and leaderboards
-  # only show the top ten lands of the current world?
-  # If disabled, Lands will show the top lands of the whole server instead.
-  per-world: false
-  # If per-world option enabled, and a player executes /Lands top in a world where
-  # no lands are, Lands will use this world instead.
-  # NOTE: The world name is case-sensitive
-  backup-world: 'world'
-
   # Top lands sort mode
   # Available sort modes: BALANCE, SIZE, MEMBERS
   # NOTE: BALANCE requires banks to be enabled.

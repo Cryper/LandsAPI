@@ -1,10 +1,82 @@
+# Resource page: https://www.spigotmc.org/resources/authors/315463/
+# Discord: https://discord.gg/B4MAJVk
+# 
+# If you encounter any issues, please report them
+# to discord support server or via pm.
+# Bugs or issues are mostly fixed within hours.
+# 
+# 
+# Here you can edit the whole GUI.
+# You can set GUI titles, the size and
+# item names, lores, materials and slots.
+# Don't remove any values or keys.
+# 
+# You also can add new items to your GUI.
+# This can be done under gui.<GUI>.s.<YourItemName>
+# The name needs to be unique in this section.
+# Example:
+# 
+# gui:
+#   lands:
+#     title: '&8Your Lands'
+#     size: 27
+#     s:
+#       close:
+#         name: '&cClose'
+#         lore:
+#         - '&7Close this menu.'
+#         - ' '
+#         - '&8- &7You can open it again'
+#         - '  &7with &8/&3Lands menu&7.'
+#         material: 'RED_STAINED_GLASS_PANE'
+#         slot: 9
+# 
+# Please note: You need to set all values
+# otherwise Lands will auto generate values.
+# Also you can't set items where list items
+# are configured. Means if for example the
+# list in the Lands GUI goes from slot
+# 10 - 12 you can set any items with
+# the slot 10, 11, 12. They will be ignored.
+# 
+# 
+# You also can apply new placeholders.
+# This can be done under gui.<GUI>.p.<YourItemName>
+# The name needs to be unique in this section.
+# Example:
+# 
+# gui:
+#   lands:
+#     p:
+#       placeholder_1:
+#       material: 'GRAY_STAINED_GLASS_PANE'
+#       from: 1
+#       to: 9
+# 
+# Please note: You need to set all values
+# otherwise Lands will auto generate values.
+# Also you can't set items where list items
+# are configured. Means if for example the
+# list in the Lands GUI goes from slot
+# 10 - 12 you can set any items with
+# the slot 10, 11, 12. They will be ignored.
+# Added enabled: false to a item to disable it.
+# You can set every item as a custom head:
+# Visit /https://minecraft-heads.com/custom-heads
+# Then copy the 'value:' and paste it at 'material:'
+# 
+# 
+# If you encounter any issues or you simply have
+# some questions, contact me via PM or Discord.
+# Discord: https://discord.gg/B4MAJVk
+
 
 general:
   wYes: Ja
   wNo: Nein
   none: '&cNichts'
   now: '&aJetzt'
-  enabled: '&aAktivieren'
+  enabled: '&aAktiviert'
   disabled: '&cDeaktivieren'
   unlimited: '&aunendlich'
   previous: '&8vorherig'
@@ -83,18 +155,18 @@ gui:
         name: '&8> &6Deine Obergrenze'
         lore:
         - ' '
-        - '&8- &7Erstellbare Länder &3{ownlands}.'
-        - '  &7lands.ownlands.NUMBER'
-        - '&8- &7BesetztbareChunks pro Land &3{chunks}.'
-        - '  &7lands.chunks.NUMBER'
-        - '&8- &7Länder in denen die vertraut bist,'
-        - '  &7mit &3{support-chunks} &7Chunks pro Land.'
-        - '  &7lands.chunks.support.NUMBER'
+        - '&8- &7Erstellbare Länder &e{ownlands}.'
+        - '  &3lands.ownlands.NUMBER'
+        - '&8- &7Besetzbare Chunks &e{chunks}.'
+        - '  &3lands.chunks.NUMBER'
+        - '&8- &7Du kannst andere Länder, in denen du vertraut'
+        - '  &7 bist, mit &e{support-chunks} &7Chunks unterstützen.'
+        - '  &3lands.chunks.support.NUMBER'
         - ' '
-        - '&8- &7Beitretbare Länder&3 {lands}.'
-        - '  &7lands.lands.NUMBER'
-        - '&8- &7Mitglieder pro Land &3 {members}.'
-        - '  &7lands.members.NUMBER'
+        - '&8- &7Beitretbare Länder&e {lands}.'
+        - '  &3lands.lands.NUMBER'
+        - '&8- &7Mitglieder pro Land&e {members}.'
+        - '  &3lands.members.NUMBER'
         material: PLAYER_HEAD
         slot: 17
   player_lands:
@@ -259,7 +331,7 @@ gui:
         lore:
         - '&7Änder den Namen'
         - '&7oder den Titel des Landes.'
-        material: BEACON
+        material: NAME_TAG
         slot: 34
     p:
       placeholder_1:
@@ -289,6 +361,16 @@ gui:
         - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
+      areas:
+        name: '&8> &6Gebiete'
+        lore:
+        - '&7Zeigt alle Gebiete des Landes an.'
+        - '&7Du kannst auch neue Gebiete'
+        - '&7in diesem Menü erstellen.'
+        - ' '
+        - '&7Größe:&3 {chunks} &7/&c {max-chunks}'
+        material: OAK_FENCE
+        slot: 13
   land_areas:
     title: '&8Gebiete'
     size: 36
@@ -459,7 +541,7 @@ gui:
         - '&cDu hast nicht das Geld'
         - '&cum dich zu einem Chunk zu telepotieren.'
         - ' '
-        - '&7Du brauchst:&c ${cost} &7.'
+        - '&7Du brauchst:&c {cost} $ &7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -845,7 +927,7 @@ gui:
         material: ARROW
         slot: 26
       create:
-        name: '&8> &aRolle erstllen'
+        name: '&8> &aRolle erstellen'
         lore:
         - '&7Drück hier um eine neue ROlle'
         - '&7zu erstellen. Du wirst druch'
@@ -1345,7 +1427,7 @@ gui:
         - '&7Dir ist es nicht erlaubt'
         - '&7die einstellung vorzunehmen.'
         - ' '
-        - '&8Permission'
+        - '&8Berechtigung'
         - '&8{permission}'
       failure_noaccess:
         name: '&4Fehlgeschlagen: &cKein Zugriff'
@@ -1636,7 +1718,7 @@ gui:
     size: 27
     s:
       plus-1:
-        name: '&aErhöhen um um $100'
+        name: '&aErhöhen um $100'
         lore:
         - '&7Erhöt die Steuer'
         - '&7um $100.'
@@ -1646,7 +1728,7 @@ gui:
         data:
           value: 1.0
       plus-2:
-        name: '&aErhöhen um um $100'
+        name: '&aErhöhen um $100'
         lore:
         - '&7Erhöt die Steuer'
         - '&7um $100.'
@@ -1655,7 +1737,7 @@ gui:
         data:
           value: 100.0
       plus-3:
-        name: '&aErhöhen um um $1000'
+        name: '&aErhöhen um $1000'
         lore:
         - '&7Erhöt die Steuer'
         - '&7um $1000.'
@@ -1699,12 +1781,12 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 19
       taxes:
-        name: '&7Steuer:&c ${tax}'
+        name: '&7Steuer:&c {tax} $'
         lore:
         - '&7Nächste Steuer in&5 {next-tax}&7.'
         - ' '
         - '&7Nächste Instandhaltungskosten in&5 {next-upkeep}&7.'
-        - '&7Dein Land muss&c ${costs}&7 zahlen.'
+        - '&7Dein Land muss&c {costs} $ &7zahlen.'
         - ' '
         - '&8- &3Steuer'
         - '  &7Wird von Land Mitgliedern,'
@@ -1894,7 +1976,7 @@ gui:
         lore:
         - '&7Akzeptiere die Einladung.'
         - ' '
-        - '&7Steuersatz:&c ${tax}'
+        - '&7Steuersatz:&c {tax} $'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
@@ -1903,7 +1985,7 @@ gui:
         lore:
         - '&7Lehnt die Einladung ab.'
         - ' '
-        - '&7Steuersatz:&c ${tax}'
+        - '&7Steuersatz:&c {tax} $'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
@@ -1917,7 +1999,7 @@ gui:
         - '&3{max} &7Ländern in denen'
         - '&7du sein kannst.'
         - ' '
-        - '&8Permission:'
+        - '&8Berechtigung:'
         - '&8lands.lands.NUMBER'
       failure_inviteOwner:
         name: '&4Fehlgeschlagen: &cBesitzer eingeladen'
@@ -1939,7 +2021,7 @@ gui:
         - '&8- &7Kontaktier den'
         - '  &7Landbesitzer für Hilfe.'
         - ' '
-        - '&8Permission:'
+        - '&8Berechtigung:'
         - '&8lands.members.NUMBER'
     p:
       placeholder_1:
@@ -2013,7 +2095,7 @@ gui:
         lore:
         - '&7Dies sind die Besitzer'
         - '&7des Landes. Konatkier sie/ihn'
-        - '&7twenn du Fragen hast.'
+        - '&7wenn du Fragen hast.'
         material: PLAYER_HEAD
         slot: 12
       chunks:
@@ -2204,7 +2286,7 @@ gui:
         - '&cgesetzt.'
         - ' '
         - '&8- &7Sie müssen'
-        - '  &8/&3Lands setspawn &7to'
+        - '  &8/&3Lands setspawn'
         - '  &7ausführen um ein Spawn zusetzen.'
       failure_teleport_cost:
         name: '&4Fehlgeschlagen: &cKein Geld'
@@ -2212,7 +2294,7 @@ gui:
         - '&cDu kannst dir die Teleportation'
         - '&czu dem Land nicht leisten.'
         - ' '
-        - '&7Du brauchst:&c ${costs}&7.'
+        - '&7Du brauchst:&c {costs} $ &7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2283,7 +2365,7 @@ gui:
         material: IRON_SWORD
         slot: 15
       tribute_attacker:
-        name: '&8> &6Tribut:&a ${tribute}'
+        name: '&8> &6Tribut:&a {tribute} $'
         lore:
         - '&7Änder den Tribut'
         - '&7der zu entrichten ist.'
@@ -2295,7 +2377,7 @@ gui:
         - '&8- &9Rechtsklick'
         - '  &7Wenn die Angreifer'
         - '  &7aufgeben wollen, müssen sie'
-        - '  &7den Tribut von&c ${tribute-att}'
+        - '  &7den Tribut von&c {tribute-att} $ '
         - '  &7den Verteidigern zahlen.'
         - ' '
         - '  &8- &7Wenn der Wert 0 ist,'
@@ -2307,12 +2389,12 @@ gui:
         material: GOLD_INGOT
         slot: 17
       tribute_defender:
-        name: '&8> &6Verteidiger Tribut:&c ${tribute}'
+        name: '&8> &6Verteidiger Tribut:&c {tribute} $'
         lore:
         - '&7Drück hier um aufzugeben.'
         - ' '
         - '&8- &7Die die aufgeben, müssen'
-        - '  &7den Tribut von ${tribute} zahlen,'
+        - '  &7den Tribut von {tribute} $ zahlen,'
         - '  &7bevor sie aufgeben können.'
         - ' '
         - '&8- &7Wenn der Wert 0 ist,'
@@ -2359,7 +2441,7 @@ gui:
         lore:
         - '&7Dein Land hat nicht das Geld'
         - '&7um den Tribut zu zahlen.'
-        - '&7Tribut:&c ${tribute}&7.'
+        - '&7Tribut:&c {tribute} $ &7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE

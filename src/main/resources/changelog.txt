@@ -16,3 +16,19 @@ This setting may be relevant to you:
 # REMOVED Chunks menu
 # REMOVED Default area from areas menu
 # FIXED Lands wild ocean teleport.
+
++ ADDED Message spam filter
+Preventing no access messages if you for example break grass inside other lands.
+
+# FIXED Invalid cashback
+# FIXED Error on removing area in setup stage
+# FIXED Animal attack in safezone
+# IMPROVED Safezone protections
+# FIXED /Lands claim auto
+# FIXED Selection not udpdating correctly
+# FIXED Respawn error
+# IMPROVED Economy integration
+# FIXED Waterflow
+# FIXED /Lands wild
+# FIXED /Lands top double
+# FIXED /Lands list double
