@@ -32,3 +32,12 @@ Preventing no access messages if you for example break grass inside other lands.
 # FIXED /Lands wild
 # FIXED /Lands top double
 # FIXED /Lands list double
+
++ ADDED Option to prevent pvp protection abuse:
+      # Specified combat settings which do not affect wars.
+      combat:
+        # Combat tagging
+        # If a player attacks a other player he will by tagged for x seconds so that, regardless of land settings,
+        # other players can attack him.
+        # Default: 45 seconds
+        tag-time: 45s

@@ -303,6 +303,14 @@ land:
     # If no land member is there, Lands will delete the land.
     replace-owner: true
 
+  # Specified combat settings which do not affect wars.
+  combat:
+    # Combat tagging
+    # If a player attacks a other player he will by tagged for x seconds so that, regardless of land settings,
+    # other players can attack him.
+    # Default: 45 seconds
+    tag-time: 45s
+
 
 
 # Taxes settings
@@ -998,7 +1006,7 @@ visualization:
     wilderness:
       # Particles can be found here:
       # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html#enum.constant.summary
-      particle: 'REDSTONE'
+      particle: 'BARRIER'
       # To edit the colors you need to
       # insert the rgb value given here.
       # Available colors:

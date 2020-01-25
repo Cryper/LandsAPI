@@ -7,12 +7,14 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Set;
 import java.util.UUID;
 
 public interface LandPlayer {
 
     /**
      * Is the player participating in a war?
+     *
      * @return true, if player is in war.
      */
     @NotNull
@@ -20,6 +22,7 @@ public interface LandPlayer {
 
     /**
      * Check if the player is participating in the war.
+     *
      * @param war War
      * @return true, if they're participating in the war.
      */
@@ -84,8 +87,6 @@ public interface LandPlayer {
 
     Land getAccessActionLand(ManagementSetting landsAction);
 
-    Land getAccessActionLand(ManagementSetting action, String worldName);
-
     /**
      * Set edit land
      * /Lands edit
@@ -95,20 +96,19 @@ public interface LandPlayer {
     void setEditLand(@Nullable Land land);
 
     /**
-     * Get number of lands (own lands and where the player is trusted)
-     * @return Will return 0, if player has no lands.
+     * Get all lands the player owns or is member of.
+     *
+     * @return Lands
      */
     @NotNull
-    int getSize();
+    Set<? extends Land> getLands();
 
     /**
-     * Get an land the player owns in an world
+     * Get number of lands (own lands and where the player is trusted)
      *
-     * @param worldName Name wof world
-     * @return Land or null, if no match found
+     * @return Will return 0, if player has no lands.
      */
-    @Nullable
-    Land getOwningLand(@NotNull String worldName);
+    int getSize();
 
     /**
      * Get an owning land
@@ -142,7 +142,7 @@ public interface LandPlayer {
      * @return Will return false if players doesn't own land.
      */
     @NotNull
-    boolean hasOwningLand();
+    boolean ownsLand();
 
     /**
      * Get names of lands.
