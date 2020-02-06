@@ -197,9 +197,8 @@ gui:
       trusted-players:
         name: '&8> &6Trusted Players'
         lore:
-          - '&7Get a list of all players which are'
-          - '&7trusted in this land. Even if they''re'
-          - '&7only trusted in specific areas.'
+          - '&7Get a list of all players, which'
+          - '&7are trusted in the &nwhole &7land.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 14
       invites:
@@ -424,8 +423,8 @@ gui:
       trusted-players:
         name: '&8> &6Trusted Players'
         lore:
-          - '&7Get a list of all players which are'
-          - '&7trusted in this area.'
+          - '&7Get a list of all players, which'
+          - '&7are trusted in this specific area.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 13
       invites:
@@ -494,12 +493,17 @@ gui:
         name: '&e{player}'
         lore:
           - '&7Role: {role}'
+          - '&7Trusted globally: {global}'
           - ' '
           - '&bLEFT CLICK'
           - '&7▲ Promote'
           - ' '
           - '&9RIGHT CLICK'
           - '&7▼ Demote'
+          - ' '
+          - '&7Use middle mouse'
+          - '&7click to get some'
+          - '&7more information.'
         material: PLAYER_HEAD
         from: 10
         to: 27
@@ -1961,9 +1965,10 @@ gui:
         name: '&6Show only public Lands?'
         lore:
           - '&7Show only lands where you''re'
-          - '&7allowed to teleport to the land spawn?'
-          - '&7Click here to toggle this setting.'
+          - '&7allowed to enter and teleport'
+          - '&7to the land spawn?'
           - ' '
+          - '&7Click here to toggle this setting.'
           - '&7Only public: {only-allowed}'
         material: ENDER_PEARL
         slot: 50

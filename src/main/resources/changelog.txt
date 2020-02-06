@@ -1,43 +1,8 @@
-+ You can now create areas inside your land which sizes are actually defined by blocks
-instead of chunks. They are three-dimensional.
+# FIXED Missing message at /Lands leave here
+leave.area.success
 
-This setting may be relevant to you:
-    # Area Settings
-    # Areas are created inside a land by blocks, not chunks.
-    area:
-      # Set the minimum size of a area (in blocks).
-      # With this setting you can force your players to organize their areas.
-      min-size: 60
+# FIXED Error while executing command. /Lands withdraw amount
+When arguments were missing.
 
-
-+ ADDED /Lands spawn will not teleport to the initial claimed chunk if no spawn is set.
-
-# REMOVED Chunk menu
-# REMOVED Chunks menu
-# REMOVED Default area from areas menu
-# FIXED Lands wild ocean teleport.
-
-+ ADDED Message spam filter
-Preventing no access messages if you for example break grass inside other lands.
-
-# FIXED Invalid cashback
-# FIXED Error on removing area in setup stage
-# FIXED Animal attack in safezone
-# IMPROVED Safezone protections
-# FIXED /Lands claim auto
-# FIXED Selection not udpdating correctly
-# FIXED Respawn error
-# IMPROVED Economy integration
-# FIXED Waterflow
-# FIXED /Lands wild
-# FIXED /Lands top double
-# FIXED /Lands list double
-
-+ ADDED Option to prevent pvp protection abuse:
-      # Specified combat settings which do not affect wars.
-      combat:
-        # Combat tagging
-        # If a player attacks a other player he will by tagged for x seconds so that, regardless of land settings,
-        # other players can attack him.
-        # Default: 45 seconds
-        tag-time: 45s
+# FIXED /Lands list deos not show lands if now spawnpoint set
+# IMPROVED Sorting / collect alogrithm for /Lands list

@@ -7,6 +7,8 @@ website: https://www.spigotmc.org/resources/53313
 api-version: 1.13
 load: POSTWORLD
 
+softdepend: [Vault, dynmap, HolographicDisplays, WorldGuard, WorldEdit, PlaceholderAPI]
+
 commands:
   lands:
     aliases: [land, l]
@@ -196,6 +198,9 @@ permissions:
           lands.bypass.selection:
             description: Bypass error message of other plugin cancelling selection
             default: op
+          lands.bypass.teleport-delay:
+            description: Bypass teleportation delays
+            default: op
           lands.bypass.wilderness.*:
             description: Bypass all wilderness protections (for worlds in disallow-wilderness_list)
             default: op
@@ -232,6 +237,9 @@ permissions:
                 default: op
               lands.bypass.wilderness.teleport:
                 description: Teleport to wilderness (unclaimed chunks) through /Lands teleport.
+                default: op
+              lands.bypass.wilderness.fly:
+                description: Fly in wilderness
                 default: op
           lands.bypass.cooldown.*:
             description: Bypass cooldowns
@@ -365,6 +373,9 @@ permissions:
             default: op
           lands.admin.land_delete:
             description: Allow to delete other lands or unclaim chunks from other lands.
+            default: op
+          lands.admin.land_setowner:
+            description: Allow the usage of /Lands setowner for lands the player doesn't own
             default: op
           lands.admin.setting_edit_land:
             description: Edit land settings of other lands (like mob spawning etc.)
