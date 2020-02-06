@@ -46,17 +46,17 @@ public interface LandsIntegrator {
     boolean isClaimed(@NotNull Location location);
 
     @Deprecated
-    CompletableFuture<Boolean> isClaimed(@NotNull String worldName, int x, int z);
+    CompletableFuture<Boolean> isClaimed(@NotNull String worldName, int chunkX, int chunkZ);
 
     /**
      * Is claimed?
      *
      * @param world World
-     * @param x     Chunk x
-     * @param z     Chunk z
+     * @param chunkX     Chunk x
+     * @param chunkZ     Chunk z
      * @return true if claimed
      */
-    boolean isClaimed(@NotNull World world, int x, int z);
+    boolean isClaimed(@NotNull World world, int chunkX, int chunkZ);
 
     /**
      * This method is not supported anymore. Please use getLand or getArea instead.
@@ -110,11 +110,11 @@ public interface LandsIntegrator {
      * Get land
      *
      * @param world World
-     * @param x     Chunk x
-     * @param z     Chunk z
+     * @param chunkX     Chunk x
+     * @param chunkZ     Chunk z
      * @return Land or null if wilderness
      */
-    @Nullable Land getLand(@NotNull World world, int x, int z);
+    @Nullable Land getLand(@NotNull World world, int chunkX, int chunkZ);
 
     /**
      * Will return the area located in a land.
