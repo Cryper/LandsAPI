@@ -53,12 +53,6 @@ public class LandsIntegration implements LandsIntegrator {
 
     @Override
     @Deprecated
-    public @Nullable LandChunk getLandChunk(@NotNull Location location) {
-        return null;
-    }
-
-    @Override
-    @Deprecated
     public Land getLand(@NotNull String worldName, @NotNull String landName) {
         return null;
     }

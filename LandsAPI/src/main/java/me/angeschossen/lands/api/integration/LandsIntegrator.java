@@ -59,16 +59,6 @@ public interface LandsIntegrator {
     boolean isClaimed(@NotNull World world, int chunkX, int chunkZ);
 
     /**
-     * This method is not supported anymore. Please use getLand or getArea instead.
-     *
-     * @param location Location
-     * @return null
-     */
-    @Deprecated
-    @Nullable
-    LandChunk getLandChunk(@NotNull Location location);
-
-    /**
      * Get land.
      *
      * @param worldName Name of world, where land is located
