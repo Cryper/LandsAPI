@@ -15,7 +15,7 @@ How to include the API with Maven:
     <dependency>
         <groupId>com.github.Angeschossen</groupId>
         <artifactId>LandsAPI</artifactId>
-        <version>4.3.5.0</version>
+        <version>4.5.2.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -27,7 +27,7 @@ repositories {
 	maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly "com.github.Angeschossen:LandsAPI:4.3.3.0"
+    compileOnly "com.github.Angeschossen:LandsAPI:4.5.2.0"
 }
 ```
 
@@ -55,7 +55,13 @@ Examble:
 
     //Just a test
     private void test(Location location) {
-        final LandChunk landChunk = landsAddon.getLandChunk(location);
+   	//Get a land area from a location
+        final LandArea landArea = landsAddon.getArea(location);
+	
+	//Get a land from a location
+	final Land land = landsAddon.getLand(location);
+	
+	
         //Do some stuff.
     }
 }
