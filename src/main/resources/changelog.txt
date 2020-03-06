@@ -1,8 +1,15 @@
-# FIXED Missing message at /Lands leave here
-leave.area.success
++ ADDED Option to hide land makers in dynmap by default:
+      # Should land markers be hidden by default?
+      hide: false
 
-# FIXED Error while executing command. /Lands withdraw amount
-When arguments were missing.
++ ADDED A swear word filter
+    This works for land names, land titles and land chat.
+    You can configure the swear word filter in your language file: swear-words
 
-# FIXED /Lands list deos not show lands if now spawnpoint set
-# IMPROVED Sorting / collect alogrithm for /Lands list
++ ADDED "{enabled}" placeholder to land settings and rolesettings item displayname
+
+# IMPROVED Taxes cooldown display format
+# FIXED Some time parse issues
+# IMPROVED /Lands wild nether lava protection
+# REMOVE /Lands wild Stone block in water
+# FIXED /Lands claim - Auto land creation

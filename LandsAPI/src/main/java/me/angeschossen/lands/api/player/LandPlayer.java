@@ -155,7 +155,7 @@ public interface LandPlayer {
     /**
      * Check is player in land
      *
-     * @param iD ID of land
+     * @param iD Id of land
      * @return Boolean
      */
     @NotNull

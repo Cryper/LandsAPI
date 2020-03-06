@@ -59,7 +59,7 @@ general:
   # instead of the land from /Lands edit?
   # For /Lands claim you will still need
   # to set the claim land with /Land edit.
-  edit-by-loc: true
+  edit-by-loc: false
 
   # Set max number of digit numbers for economy values, such as claim costs, taxes etc.
   # This setting requires server reload / restart.
@@ -76,7 +76,7 @@ general:
     time:
       # Plus 1 chunk (/Lands claim)
       # If you want to disable this specific option, just set it to 0 or -1.
-      chunk: 3060
+      chunk: 3600
       # Plus 1 lands where a player can be a member (not owner - /Lands accept, /Lands trust).
       # If you want to disable this specific option, just set it to 0 or -1.
       land: 43200
@@ -86,9 +86,6 @@ general:
       # Plus 1 land member (/Lands trust)
       # If you want to disable this specific option, just set it to 0 or -1.
       member: 21600
-  # Allow Lands to send some anonymous statistics about how you use Lands to https://bstats.org/lands/bukkit/Lands
-  # This helps the development of Lands to make implementations for new features easier.
-  metrics: true
 
 
 
@@ -160,6 +157,12 @@ land:
     # Only add lands.chunks.support.NUMBER value to max claim amount of lands,
     # if the player is trusted in the whole land?
     only-global: true
+
+  # Land ("sub") areas
+  # With areas you can create "sub" areas to specify special zones in your land.
+  # You can also trust players to them and configure settings.
+  areas:
+    enabled_21: true
 
   # Invite settings
   invite:
@@ -332,6 +335,13 @@ land:
     # other players can attack him.
     # Default: 45 seconds
     tag-time: 45s
+
+  # Set claim limits per world.
+  # Example: If you set the permission lands.chunks.5 for your players,
+  # they will be able to claim 5 chunks in each claim world instead of 5 chunks in general.
+  # NOTE: This only applies for claim permissions: lands.chunks.NUMBER, lands.ownlands.NUMBER
+  # It is recommended to keep this disabled.
+  claim-limits-per-world: false
 
 
 
@@ -994,7 +1004,7 @@ backup:
   # Enable this to create backup creation on every lands enabling.
   # NOTE: It's alway recommended creating backups,
   # even if there are no problems.
-  startup: true
+  startup: false
   # Time in days after a created backup should get deleted.
   # Set this to 0, to disable it.
   days-delete: 28
@@ -1122,7 +1132,8 @@ random-teleport:
     - world
 
   distance:
-    # Max distance from world spawn (/setworldspawn)
+    # Max distance from world spawn
+    # NOTE: YOU NEED TO SET THE WOLRD SPAWN (MIDDLE) TO LET THIS WORK PROPERLY: /setworldspawn
     # This setting requires server reload / restart.
     max: 15000
     # Set the minimum distance between the players current position and the teleport destination.
@@ -1230,6 +1241,8 @@ integration:
     # Dynmap
     Dynmap:
       enabled_12: true
+      # Should land markers be hidden by default?
+      hide: false
       # Set the maximum amount of chunks beeing processed at once for updating the land markers.
       # These chunks aren't actual minecraft chunks. Just Lands chunks.
       # This setting is especially for weaker hardware.
@@ -1238,6 +1251,7 @@ integration:
       # Set the spawn icon
       # You can disable this by setting it to ''
       spawn:
+        # Set the icon
         icon: 'greenflag'
         # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
         min-zoom: 5
@@ -1316,7 +1330,7 @@ wars:
   # War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
   status-interval: 15m
   # Set the max time a war can hold on.
-  # Default: 2,5 days
+  # Default: 1,5 days
   duration_2: 36h
 
   # Allow players doing the following things in the enemy land (only during war).

@@ -11,7 +11,7 @@ softdepend: [Vault, dynmap, HolographicDisplays, WorldGuard, WorldEdit, Placehol
 
 commands:
   lands:
-    aliases: [land, l]
+    aliases: [l, land]
     description: Manage your land
   wars:
     aliases: [war, w]
@@ -102,10 +102,10 @@ permissions:
             description: /Lands leave
             default: op
           lands.command.menu:
-            description: /Lands menu, /Lands
+            description: /Lands menu
             default: op
           lands.command.rename:
-            description: /Lands reload
+            description: /Lands rename
             default: op
           lands.command.selection:
             description: /Lands selection
@@ -199,7 +199,7 @@ permissions:
             description: Bypass error message of other plugin cancelling selection
             default: op
           lands.bypass.teleport-delay:
-            description: Bypass teleportation delays
+            description: Bypass teleportation delays / warmups
             default: op
           lands.bypass.wilderness.*:
             description: Bypass all wilderness protections (for worlds in disallow-wilderness_list)

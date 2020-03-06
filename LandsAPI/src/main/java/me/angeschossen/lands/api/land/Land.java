@@ -76,7 +76,7 @@ public interface Land {
     /**
      * Get id of land.
      *
-     * @return ID
+     * @return Id
      */
     int getID();
 
