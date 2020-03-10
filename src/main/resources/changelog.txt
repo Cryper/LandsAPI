@@ -1,5 +1,21 @@
+4.5.3.5
++ ADDED Some missing permission nodes to the plugin.yml and wiki.
+
+4.5.3.4
++ ADDED Setting for safezones:
+      # Should players be protected from damage caused by monsters?
+      safezone-invincible: true
+
++ If edit-by-loc enabled in config. Players, which are only trusted in one land can now use /Lands chat <message>
+    to chat with their land instead of /Lands chat <land> <message>
+    NOTE: This does not matter if edit-by-loc is disabled.
+
+# FIXED Possible land-enter bypass issue
+
+
 4.5.3.3
 # FIXED Error in Upkeep task while setting inbox message
+# FIXED Lands creation auto spawn set: Setting spawn in air, if player is flying
 
 
 4.5.3.2

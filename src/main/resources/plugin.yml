@@ -300,6 +300,8 @@ permissions:
           lands.setting.waterflow_allow:
             description: Allow to toggle waterflow
             default: op
+          lands.setting.tnt_griefing:
+            description: Toggle Flag - Allow tnt griefing inside a land / area.
       lands.role.*:
         description: Access to all role settings
         default: op
@@ -335,6 +337,14 @@ permissions:
               lands.role.setting.interact_mechanism:
                 description: Allow to toggle interact mechanism (redstone)
                 default: op
+              lands.role.setting.interact_villager:
+                description: Toggle Flag - Allow a role to interact with villager.
+                default: op
+              lands.role.setting.fly:
+                description: Toggle Flag - Allow a role to fly inside the land / area.
+                default: op
+              lands.role.setting.land_enter:
+                description: Toggle Flag - Allow a role to enter the land / area.
               lands.role.setting.player_trust:
                 description: Allow to toggle trust player
                 default: op
@@ -353,15 +363,35 @@ permissions:
               lands.role.setting.spawn_set:
                 description: Allow to toggle spawn set
                 default: op
-              lands.role.setting.setting.spawn_teleport:
+              lands.role.setting.spawn_teleport:
                 description: Allow to toggle spawn teleport
                 default: op
               lands.role.setting.land_rename:
-                description: Allow to rename land
+                description: Allow to toggle rename land setting
                 default: op
               lands.role.setting.setting_edit:
-                description: Allow to toggle alow this role to change settings of a role with lower priority
+                description: Allow to toggle allow this role to change settings of a role with lower priority
                 default: op
+              lands.role.setting.balance_withdraw:
+                description: Toggle Flag - Allow a role to withdraw money from the land bank
+                default: op
+              lands.role.setting.area_assign:
+                description: Toggle Flag - Allow a role to assign a selection to a area.
+                default: op
+              lands.role.setting.setting_edit_advanced:
+                description: Toggle Flag - Allow a role to edit advanced settings.
+                default: op
+              lands.role.setting.setting_edit_land:
+                description: Toggle Flag - Allow a role to edit land settings.
+                default: op
+              lands.role.setting.setting_edit_role:
+                description: Toggle Flag - Allow a role to edit role settings of roles with a lower priority.
+                default: op
+              lands.role.setting.setting_edit_taxes:
+                description: Toggle Flag - Allow a role to edit taxes.
+                default: op
+
+
 
 
       lands.admin.*:
@@ -380,7 +410,7 @@ permissions:
           lands.admin.setting_edit_land:
             description: Edit land settings of other lands (like mob spawning etc.)
             default: op
-          lands.amdin.setting_edit_role:
+          lands.admin.setting_edit_role:
             description: Edit role settings of other lands.
             default: op
           lands.admin.setting_edit_taxes:

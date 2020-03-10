@@ -55,6 +55,9 @@ general:
   # safezones for world spawns.
   keep-safezone: true
 
+  # Should players be protected from damage caused by monsters?
+  safezone-invincible: true
+
   # Edit the land you're standing in
   # instead of the land from /Lands edit?
   # For /Lands claim you will still need
