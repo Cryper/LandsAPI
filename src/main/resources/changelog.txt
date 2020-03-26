@@ -1,3 +1,110 @@
+4.5.4.8
++ ADDED Message spawn.unsafe
+This will be sent if the spawn location is not safe for teleportation. This prevents people killing visitors by setting traps.
+
+
+4.5.4.7
+# IMPROVED Name updater offline calculation
+# IMPROVED Luckperms contexts
+
+4.5.4.6
++ ADDED You now can set messages to '' in order to prevent them from being sent to the player
++ ADDED Towny importer will now also import the towns balance
+
+# IMPROVED Container load speed
+# IMPROVED Teleportation bossbar
+
+# FIXED Container save error
+# FIXED Colored land names not accepted
+
+# IMPROVED Player purger task will not remove deleted players from playtime. This will result in their playtime get deleted if they are longer offline than x days. Configured in config.
+"land.expiration.offline-days.member"
+
+# FIXED PvP issue
+
+
+4.5.4.5
++ ADDED Bossbar for teleportations:
+  teleportation:
+    bossbar: '&7Wait&5 {time} &7Second(s) until Teleportation.'
+
+# OPTIMIZED Container data load
+# FIXED Land purger task not saving players
+
+4.5.4.4
++ ADDED Title for /lands wild, if looking for new random teleport destination
+    This message will only be sent, if there's no pre-calculated destination available, since pre-caluclated destionations will be progressed immediately.
+    searching: '#t#&6Searching Destination{newline}&eWaiting for Teleportation to start..'
+
++ ADDED Message: "event.enter.pvp-warning"
+    This message will show up when a player enters a area where he can be attacked from other players
+    Also it will only appear, if the player is not trusted in the area.
+
+# CHANGED Land enter / leave title message locations:
+    enter:
+      land: '#t#&2&l{land}{newline}&3{title}'
+      safezone: '#t#&2&l{land}{newline}{title}'
+      pvp-warning: '#a#&cYou entered a pvp zone. Other players can attack you.'
+    leave:
+      land: '#t#&2&lWilderness{newline}&7Feel the wild.'
+      safezone: '#t#&2&lWilderness{newline}&7Feel the wild.'
+
+# OPTIMIZED Luckperms integration
+# REMOVED Unused classes to reduce file size
+# IMPROVED Residence import
+
+4.5.4.3
++ ADDED Messages which will be sent to the player when he has been banned with /lands ban: ban.area.target, ban.land.target, unban.area.target, unban.land.target
++ ADDED Banned players will be teleported to the world spawn, when getting banned and currently inside the area / land.
+
+4.5.4.2
++ ADDED Ability to allow non-latin letters in land names, like öäü etc.
+    /lands create and /Lands rename
++ ADDED Option to change the color of safezones on your dynmap: color-safezone_2 and color-safezone_3
+
+4.5.4.1
+# FIXED Claimblock placement
+# FIXED Residence importer
+
+4.5.4.0
++ ADDED Protection against frost walker enchantement
++ ADDED Sorting of areas in areas menu
++ ADDED Sorting of players in trusted players menu
++ ADDED Sorting of players in role members menu
+
+# CHANGED Lands which haven't set a spawn (/lands setspawn) won't be listed anymore in the land list menu
+    If you still want them to display, just make sure to toggle the allow only teleport lands item at the bottom of the menu
+# FIXED Nether spawn teleportation
+# OPTIMIZED Time reward execution and possible already has permission messages
+
+4.5.3.9
++ ADDED If attacker is standing in a area where the target can't pvp and the target is standing in wilderness they won't be able to fight and the following message will be sent to the attacker.
+
++ ADDED Message:
+        wilderness: '&cYou can''t attack this player, because he''s in wilderness and you''re standing in claimed land.'
+
++ ADDED /Lands ban <player> [here] command
+    Ban players from your land / area, this will disallow them to enter the area or teleport to it.
+
++ ADDED /Lands unban <player> [here] command
+    Unban players from your land / area.
+
+# FIXED Minor issues with time rewards in console
+# FIXED Dynmap hide markers option
+# FIXED Invalid max roles permission in roles menu. It was one too high.
+
+4.5.3.8
+# FIXED TNT griefing and entity creeper swapped at creepers
+
+4.5.3.6
+# CHANGED Time rewards calculation
+    Time rewards will now calculate new rewards by MANUAL SET PERMISSIONS + TIME REWARD
+    Before it would wait until the playtime was greater than MANUAL SET PERMISSIONS
+
+# FIXED Wrong war kill messages for attackers and defenders
+# FIXED Error while using claim block
+
+
 4.5.3.5
 + ADDED Some missing permission nodes to the plugin.yml and wiki.
 

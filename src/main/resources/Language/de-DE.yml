@@ -323,7 +323,7 @@ command:
       von &3 {max} &7Ländern erreicht. &8Rechte: lands.lands.NUMBER'
     name-numbers: '&cDu kannst keine Zahlen in deinem Ländernamen nutzen. &7Bitte
       nutz nur Buchstaben.'
-    name-accent: '&cBitte nutz keine Akzente. &7Nicht lateinische Buchstaben:&3 {non-latin}
+    name-accent: '&cBitte nutz keine Akzente. &7Nicht lateinische Buchstaben:&3 {invalid}
       &7Bitte nutz nur lateinische Buchstaben.'
     name-length: '&cDer Name ist zu lang. &7Die maximale Länge ist&3 {max} &7. &8Ein
       Administrator kann das ändern .'

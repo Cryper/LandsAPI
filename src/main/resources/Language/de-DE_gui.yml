@@ -1446,7 +1446,7 @@ gui:
         - '&7Die Rolle hat eine höhere'
         - '&7priorität als deine.'
         - ' '
-        - '&8Bypass: lands.amdin.setting_edit_role'
+        - '&8Bypass: lands.admin.setting_edit_role'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE

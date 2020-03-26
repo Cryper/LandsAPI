@@ -1,21 +1,24 @@
 name: Lands
 main: me.angeschossen.lands.Lands
 version: ${project.version}
-author: Angeschossen
-description: Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!
-website: https://www.spigotmc.org/resources/53313
-api-version: 1.13
+author: 'Angeschossen'
+description: 'Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!'
+website: 'https://www.spigotmc.org/resources/53313'
+api-version: '1.13'
 load: POSTWORLD
 
 softdepend: [Vault, dynmap, HolographicDisplays, WorldGuard, WorldEdit, PlaceholderAPI]
 
 commands:
   lands:
-    aliases: [l, land]
-    description: Manage your land
+    aliases: [land, l]
+    description: 'Manage your land.'
   wars:
     aliases: [war, w]
-    description: Lands war command
+    description: 'Lands war command.'
+  nations:
+    aliases: [nation, n]
+    description: 'Lands nation command.'
 
 permissions:
   lands.*:
@@ -149,6 +152,12 @@ permissions:
           lands.command.list:
             description: /Lands list
             default: op
+          lands.command.ban:
+            description: /Lands banF
+            default: op
+          lands.command.unban:
+            description: /Lands unban
+            default: op
       lands.bypass.*:
         description: Bypass all protections and other restrictions
         children:
@@ -281,6 +290,7 @@ permissions:
               lands.gui.chunk.teleport:
                 description: Allow teleporting to claimed chunks
                 default: op
+
       lands.setting.*:
         description: Access to land settings
         default: op
@@ -302,6 +312,7 @@ permissions:
             default: op
           lands.setting.tnt_griefing:
             description: Toggle Flag - Allow tnt griefing inside a land / area.
+
       lands.role.*:
         description: Access to all role settings
         default: op
@@ -328,7 +339,7 @@ permissions:
               lands.role.setting.interact_general:
                 description: Allow to toggle general interaction
                 default: op
-              lands.role.setting.interact_doors:
+              lands.role.setting.interact_door:
                 description: Allow to toggle open doors
                 default: op
               lands.role.setting.interact_container:

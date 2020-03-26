@@ -82,6 +82,9 @@ general:
     nametag:
       enemy: '&cENEMY &8| '
       ally: '&aALLY &8| '
+  teleportation:
+    bossbar: '&7Wait&5 {time} &7Second(s) until Teleportation.'
+
 help:
   general:
     help-prefix: '&7Usage: '
@@ -121,11 +124,18 @@ help:
     list: '&8/&3Lands list &8[&3world&8] - &7List all lands'
     assign: '&8/&3Lands assign &8<&3area&8> - &7Assign selection to area'
     setowner: '&8/&3Lands setowner &8<&3player&8> - &7Transfer ownership'
+    ban: '&8/&3Lands ban &8<&3player&8> - &7Ban player'
+    unban: '&8/&3Lands unban &8<&3player&8> - &7Unban player'
 
     wars:
       declare: '&8/&3Wars declare &8<&3land&8> - &7Declare war'
       info: '&8/&3Wars info - &7Show current or upcoming war'
       menu: '&8/&3Wars menu &8- &7Open war menu'
+
+    nations:
+      create: '&8/&3Nations create &8[&3name&8] - &7Create nation'
+      menu: '&8/&3Nations menu &8- &7Open nation menu'
+
     admin:
       admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7Admin commands'
       debug: '&8/&3Lands debug &8- &7Shows loaded data stats'
@@ -151,6 +161,7 @@ message:
     ignite: '&cYou''re not allowed to ignite blocks here. &7This area belongs to land&2 {land}&7.'
     enter: '&cYou''re not allowed to enter the area&4 {area} &cof land&4 {land}&c. &7You were teleported to your previous location.'
     edit: '&cYou''re not allowed to edit this land. &7This chunk belongs to land&2 {land}&7.'
+    banned: '&cYou''re not allowed to enter this area. &7You have been banned from this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Bypass permission: {bypass}'
     interact:
       general: '&cYou''re not allowed to interact here. &7This area belongs to land&2 {land}&7.'
       door: '&cYou''re not allowed to open doors here. &7This area belongs to land&2 {land}&7.'
@@ -163,6 +174,7 @@ message:
         attacker: '&cYou''re not allowed to attack players here. &7This area belongs to land&2 {land}&7.'
         target: '&cYour target isn''t allowed to attack players here. &7You can''t fight with them here. &7This area belongs to land&2 {land}&7.'
         ally: '&cYou can''t attack this player in wilderness, because he is a member in one of your lands. &7Arena fights can be done in your land by allowing pvp in the role settings.'
+        wilderness: '&cYou can''t attack this player, because he''s in wilderness and you''re standing in claimed land.'
   event:
     fly:
       warning: '&7You''re not allowed to fly here. Flight mode will be disabled in a few seconds. &8Bypass permission: {permission}'
@@ -170,12 +182,13 @@ message:
       disabled: '&cYour fly mode was disabled. &7You''re missing permission to fly here.'
       disallowed: '&cYou''re not allowed to fly in this land. &7Contact the land owner. &8Bypass permission: lands.bypass.fly'
       disallowed-wilderness: '&cYou''re not allowed to fly in wilderness. &8Bypass permission: lands.bypass.wilderness.fly'
-    lands:
-      enter: '#t#&2&l{land}{newline}&3{title}'
-      leave: '#t#&2&lWilderness{newline}&7Feel the wild.'
-    safezones:
-      enter: '#t#&2&l{land}{newline}{title}'
-      leave: '#t#&2&lWilderness{newline}&7Feel the wild.'
+    enter:
+      land: '#t#&2&l{land}{newline}&3{title}'
+      safezone: '#t#&2&l{land}{newline}{title}'
+      pvp-warning: '#a#&cYou entered a pvp zone.'
+    leave:
+      land: '#t#&2&lWilderness{newline}&7Feel the wild'
+      safezone: '#t#&2&lWilderness{newline}&7Feel the wild'
     teleport:
       already: '&cYou can''t start a second teleportation, because There''s already a teleportation in progress. &7Please wait until it''s done.'
       started: '&7Teleportation process started. Teleporting in&5 {sec} &7seconds. Please don''t move.'
@@ -204,13 +217,13 @@ message:
     cancelled: '#t#&c&lCancelled{newline}&c&lChat Action'
     player: '&7Please enter the name of the target player.'
     role:
-      create: '&7Please enter a name for the new role. You can include color codes.'
+      create: '&7Please enter a name for the new role.'
       default: '&cYou can''t delete this role. &7It is a default role.'
       delete: '&7Please enter the name of the role, which you want to delete.'
       exists: '&cA role with the name&4 {role} &calready exists. &7Please choose a different name.'
       max: '&cYou can''t create more roles for this land. &7You reached your limit of&3 {max} &7roles. Permisssion: lands.roles.NUMBER'
     area:
-      create: '&7Please enter a name for the new area. You can include color codes.'
+      create: '&7Please enter a name for the new area.'
       delete: '&7Please enter the name of the area, which you want to delete.'
       exists: '&cThe area&4 {area} &calready exists in this land &8(&7Land:&2 {land}&8)&c. &7Please choose a different name.'
       max: '&cYou can''t create more areas for this land. &7You reached your limit of&3 {max} &7areas. Permisssion: lands.areas.NUMBER'
@@ -232,8 +245,7 @@ command:
     money-cost-bank: '&cYou don''t have enough to pay the cost. &7You need&c ${cost}&7. Deposit some money into your land bank: &8/&3Lands deposit {cost}'
     money-cost: '&cYou don''t have enough to pay the cost. &7You need&c ${cost}&7.'
     lands-max: '&cYou can''t be part of any more lands. &7You reached your maximum of&3 {max} &7lands. &8Permission: lands.lands.NUMBER'
-    name-numbers: '&cYou can''t use numbers in your lands name. &7Please use only latin letters.'
-    name-accent: '&cYou can''t use accents in your lands name. &7Found non latin letters:&3 {non-latin} &7Please use only latin letters.'
+    invalid-character: '&cYou can''t use invalid characters for the name. &7Found invalid character:&3 {invalid} &7Please use only letters and numbers.'
     name-length: '&cThis name is too long. &7Max length is&3 {max} &7characters. &8An administrator can change that in the config.'
     swear-word: '&cDetected a swear word. &7Please do not use mature language. Word:&c {word}'
     action-cooldown: '&cYou can''t do this now. &7You need to wait&5 {time}&7.'
@@ -254,7 +266,7 @@ command:
     cmd-not-exist: '&cThis command doesnt exist. &7Command&3 {command} &7is invalid.'
     page-not-exist: '&cThe page&4 {page} &cdoesnt exist. &7Typo?'
   create:
-    land-other: '&cYou''re not allowed to have your own land and be a member of another land. &7You need to leave land&2 {land} &7first. &8An administrator can disable this in the config.'
+    land-other: '&cYou''re not allowed to have your own land and be a member of another land. &7You need to leave land&2 {land} &7first. &8An administrator can disable this in the config: invite-owner'
     max-own: '&cYou can''t create any more lands. &7You reached your maximum of&3 {max} &7own lands. &8Permission: lands.ownlands.NUMBER'
     success: '&7Successfully created land&2 {land} &7for&c ${cost}&7. You can claim chunks by executing &8/&3Lands claim&7. You can also use /Lands selection to claim a selection. Set land {land} as your edit land for future actions &8(/&3Lands edit&8)&7.'
     broadcast: '&7Land&2 {land} &7was created by&3 {player}&7.'
@@ -371,9 +383,11 @@ command:
     not-exist: '&cThere''s no spawn set for land&4 {land}&c. &7Someone needs to set it first by executing &8/&3Land setspawn&7.'
     not-allowed: '&cYou''re not allowed to teleport to the spawn of this land. &7They need to give you permission to do so &8(&7Land:&2 {land}&8)&7.'
     chunk: '&7Land&2 {land} &7hasn''t set a land spawn &8(&8/&3Lands setspawn&8) &7yet. &7Teleported you to the initial claim of this land.'
+    unsafe: '&cYou can''t teleport to this spawn, because it was detected as being unsafe for teleportation. &7Teleporting there might result into dying. They need to adjust the spawn by using &8/&3Lands setspawn&7.'
     successs: '&7Successfully teleported to the spawn of land&2 {land} &7Cost:&c ${cost}'
   wild:
     no-loc: '&cCouldnt find a safe location for you that matches the filter in config. &8Please set the max distance setting higher for random teleportation in config. Also you can lower the min distance option.'
+    searching: '#t#&6Searching Destination{newline}&eWaiting for Teleportation to start..'
     success: '&7You were random teleported &8(&7X: {x} Z: {z}&8)&7. You paid&c ${cost}&7.'
   deposit:
     number: '&7You need to specify an amount of money. Use &8/&aLand deposit &8<&aAmount&8> &7or &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
@@ -383,9 +397,22 @@ command:
     balance: '&cThere''s not enough money in the land bank. &7There''s only&b ${bank} &7in the land bank. Expected:&3 ${take} &8(&7Land:&2 {land}&8)'
     success: '&7You successfully took&b ${cost} &7out of the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&2 {land}&8)'
   balance: '&7The balance is&b ${balance} &8(&7Land:&2 {land}&8)&7.'
-  menu:
-    no-permission-other: '&cYou''re not allowed to open other players GUIs. &7You need permission&e lands.command.menu.others &7to do that.'
-    notExist: '&cThis player currently doesnt have any data.'
+  ban:
+    area:
+      trusted: '&cThe player&4 {player} &cis trusted in this area. &7You need to untrust them first &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      success: '&7Successfully banned player&3 {player} &7from this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. They won''t be able to enter it or teleport to the spawn, if it is located in this area.'
+      target: '&cLand&4 {land} &cbanned you from their area&4 {area} &cinside their land. &7You won''t be able to enter it or teleport to the spawn, if it is located in this area.'
+    land:
+      trusted: '&cThe player&4 {player} &cis trusted in this the land&4 {land}&c. &7You need to untrust them first.'
+      success: '&7Successfully banned player&3 {player} &7from the land&2 {land}&7. They won''t be able to enter it or teleport to the spawn.'
+      target: '&cLand&4 {land} &cbanned you from their land&c. &7You won''t be able to enter it or teleport to the spawn.'
+  unban:
+    area:
+      success: '&7Successfully unbanned player&3 {player} &7from this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      target: '&7Land&2 {land} &7unbanned you from their area&6 {area}&7.'
+    land:
+      success: '&7Successfully unbanned player&3 {player} &7from the land&2 {land}&7.'
+      target: '&7Land&2 {land} &7unbanned you from their land.'
   chat:
     activated: '&7Activated land chat. Send a message in public chat to chat with your land.'
     deactivated: '&7Successfully deactivated land chat.'
@@ -522,3 +549,16 @@ wars:
       broadcast: '&7Land&c {attacker} &7declared war against the land&a {defender}&7. Their war will start in&5 {time}&7.'
     info:
       peace: '&7Everything is peaceful for land&b {land}&7. &7No ongoing wars or war declarations for this land.'
+
+
+nations:
+  message:
+
+
+  command:
+    general:
+      no-nation: '&cYour land&4 {land} &cisn''t part of any nation. &7Join one by executing &8/&aNations join &7or create one with &8/&3Nations create&7.'
+
+    create:
+      already: '&cYour land&4 {land} &cis already part of the nation&4 {nation}&c. &7Your land needs to leave it first by executing &8/&3Nations leave&7.'
+      created: '&7You successfully created the nation&a {nation} &7with the land&2 {land} &7as the leader.'
