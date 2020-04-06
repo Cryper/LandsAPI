@@ -258,8 +258,8 @@ message:
       cancelled: '&cDie wurdest nicht teleportierst. &7Bitte bleib für &5{sec} &7Sekunden
         stehen damit du teleportiert wirst.'
       chunk: '#t#&9&lTeleportiert{newline}&7X: {x} Z: {z} Kosten: &e {cost} $'
-      cancelled-plugins: '&cTeleportation was cancelled by a other plugin. &7Please
-        check your other plugins. &7This is not a Lands issue.'
+      cancelled-plugins: '&cTeleportation wurde von einem anderen Plugin abgebrochen. &7Bitte überprüf
+        deine anderen Plugins. &7Dies ist kein Lands Fehler.'
   claimblock:
     dropped: '&cEinige Claimblocks liegen am Boden. &7Du hattest kein Platz mehr im
       Inventar.'
@@ -301,8 +301,8 @@ message:
         {land}&8)&c. &7Bitte nutz ein anderen Namen.'
       max: '&cYDu kannst keine Gebiete mehr erstellen für das Land. &7Das Maximum
         von &3{max} &7Gebiten wurde erreicht. Permisssion: lands.areas.NUMBER'
-    title: '&7Please enter a new title for this land. You can include colorcodes.'
-    rename: '&7Please enter a new name for this land. Spaces are not allowed.'
+    title: '&7Bitte gib ein neuen Titel für das Land ein. Du kannst auch Farbcodes nutzen.'
+    rename: '&7Bitte gib ein neuen Namen für das Land ein. Leerzeichen sind nicht erlaubt.'
 command:
   general:
     land-not-exist: '&cDas Land&2 {land} &cexistiert nicht.'
@@ -560,9 +560,9 @@ command:
       discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
   view:
     toggle:
-      enabled: '&7You sucessfully enabled permanent land view outline. &7To disable
-        it, just execute this command again.'
-      disabled: '&7You successfully disabled your current land view mode.'
+      enabled: '&7Du lässt dir jetzt permanent die Landesgrenze anzeigen. Um dies wieder auszumachen, führe
+        den Befehl erneut aus.'
+      disabled: '&7Du hast die Landesgrenzen ausgeschaltet.'
 list:
   views:
   - '&7---------<- &5&lLand Informationen &7->---------'
