@@ -38,7 +38,7 @@
 
 
 general:
-  prefix: '&8[&aTrevion&8] '
+  prefix: '&8[&aLands&8] '
   wYes: '&aJa'
   wNo: '&cNein'
   none: '&8Leer'
